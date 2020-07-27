@@ -6,20 +6,20 @@
                     <div class="footer-item footer-service">
                         <h2>Important Links</h2>
                         <ul class="fmain">
-                                                                <li><a href="https://www.worldometers.info/coronavirus/">Coronavirus Pandemic</a></li>
-                                                                    <li><a href="https://www.bbc.com/news/coronavirus">BBC News</a></li>
-                                                                    <li><a href="https://www.livescience.com/coronavirus-updates-united-states.html">Covid 19 in USA</a></li>
-                                                            </ul>
+                            <li><a href="https://www.worldometers.info/coronavirus/">Coronavirus Pandemic</a></li>
+                            <li><a href="https://www.bbc.com/news/coronavirus">BBC News</a></li>
+                            <li><a href="https://www.livescience.com/coronavirus-updates-united-states.html">Covid 19 in USA</a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer-item footer-service">
                         <h2>Pages</h2>
                         <ul class="fmain">
-                                                                <li><a href="page/about.html">About</a></li>
-                                                                    <li><a href="page/privacy-policy.html">Privacy Policy</a></li>
-                                                                    <li><a href="page/terms-and-conditions.html">Terms and Conditions</a></li>
-                                                            </ul>
+                            <li><a href="about">About</a></li>
+                            <li><a href="privacy-policy">Privacy Policy</a></li>
+                            <li><a href="terms-and-conditions">Terms and Conditions</a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -37,12 +37,12 @@
                         <h2>Social Media</h2>
                         <div class="footer-social-link">
                             <ul>
-                                                                        <li><a href="http://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                                                            <li><a href="http://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                                                            <li><a href="http://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                                                                            <li><a href="http://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                                                                            <li><a href="http://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a></li>
-                                                                    </ul>
+                                <li><a href="http://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="http://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="http://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="http://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                                <li><a href="http://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

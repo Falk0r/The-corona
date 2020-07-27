@@ -26,8 +26,68 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function preventions()
+    {
+        return view('preventions');
+    }
+
+    public function products()
+    {
+        return view('products');
+    }
+    
     public function news()
     {
         return view('news');
+    }
+
+    public function photoGallery()
+    {
+        return view('photo-gallery');
+    }
+
+    public function videoGallery()
+    {
+        return view('video-gallery');
+    }
+
+    public function faq()
+    {
+        return view('faq');
+    }
+
+    public function doctors()
+    {
+        return view('doctors');
+    }
+
+    public function whoWeAre()
+    {
+        return view('who-we-are');
+    }
+
+    public function whatWeDo()
+    {
+        return view('what-we-do');
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
+    public function privacyPolicy()
+    {
+        return view('privacy-policy');
+    }
+
+    public function termsAndConditions()
+    {
+        return view('terms-and-conditions');
     }
 }
