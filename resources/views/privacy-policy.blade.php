@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>home</h1>
+<h1>privacy policy</h1>
 @endsection
