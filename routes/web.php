@@ -29,6 +29,8 @@ Route::get('/contact', 'HomeController@news')->name('contact');
 
 //Route::get('/jsbazar', 'HomeController@news')->name('pages');
 
+Route::get('/testdoc', 'HomeController@testDoctors')->name('testdoctors'); //to teste database
+
 Route::get('/photo-gallery', 'HomeController@photoGallery')->name('photo-gallery');
 Route::get('/video-gallery', 'HomeController@videoGallery')->name('video-gallery');
 Route::get('/faq', 'HomeController@faq')->name('faq');
