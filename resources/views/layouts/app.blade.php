@@ -17,11 +17,11 @@
 		
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
   
     <!-- All CSS -->
-    <link rel="stylesheet" href="css/app.css">
+    {{-- <link rel="stylesheet" href="css/app.css"> --}}
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -36,10 +36,9 @@
     <link rel="stylesheet" href="css/spacing.css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">  
-    <link rel="stylesheet" href="css/app.css">  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css" />
+    {{-- <link rel="stylesheet" href="css/app.css">   --}}
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css" /> --}}
 
         <!-- All JS -->
     <script src="js/jquery.min.js"></script>
@@ -55,6 +54,7 @@
     <script src="js/jquery.dataTables.min.js"></script>
     <script src="js/select2.full.js"></script>
     <script src="js/sweetalert2.min.js"></script>
+    <script src="https://kit.fontawesome.com/bac71461de.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app">
