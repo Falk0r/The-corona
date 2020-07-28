@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<<<<<<< HEAD
 
 <div class="page-banner">
 	<div class="bg-page"></div>
@@ -127,3 +128,7 @@
 	</div>
 </div>
 @endsection
+=======
+<h1>DOCTORS</h1>
+@endsection
+>>>>>>> 47659ee678877ab6d1440b726993d89563b9ba0c
