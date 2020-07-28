@@ -14,6 +14,7 @@ use Illuminate\Auth;
 |
 */
 
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -37,5 +38,6 @@ Route::get('/what-we-do', 'HomeController@whatWeDo')->name('what-we-do');
 
 Route::get('/privacy-policy', 'HomeController@privacyPolicy')->name('privacy-policy');
 Route::get('/terms-and-conditions', 'HomeController@termsAndConditions')->name('terms-and-conditions');
+
 
 
