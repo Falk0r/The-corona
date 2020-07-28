@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +14,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    //test
-    return view('welcome');
-});
 
-Auth::routes();
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Auth::routes();
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/about', 'HomeController@about')->name('about');
+Route::get('/preventions', 'HomeController@preventions')->name('preventions');
+Route::get('/products', 'HomeController@products')->name('products');
+Route::get('/news', 'HomeController@news')->name('news');
+Route::get('/contact', 'HomeController@news')->name('contact');
 
-Auth::routes();
+//Route::get('/jsbazar', 'HomeController@news')->name('pages');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/photo-gallery', 'HomeController@photoGallery')->name('photo-gallery');
+Route::get('/video-gallery', 'HomeController@videoGallery')->name('video-gallery');
+Route::get('/faq', 'HomeController@faq')->name('faq');
+Route::get('/doctors', 'HomeController@doctors')->name('doctors');
+Route::get('/who-we-are', 'HomeController@whoWeAre')->name('who-we-are');
+Route::get('/what-we-do', 'HomeController@whatWeDo')->name('what-we-do');
+
+Route::get('/privacy-policy', 'HomeController@privacyPolicy')->name('privacy-policy');
+Route::get('/terms-and-conditions', 'HomeController@termsAndConditions')->name('terms-and-conditions');
+
+
+
