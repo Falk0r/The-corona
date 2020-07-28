@@ -1,15 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
 
-<div class="page-banner">
+<div class="page-banner" style="background-image: url(/uploads/page-banner-4.jpg)">
 	<div class="bg-page"></div>
 	<div class="text">
 		<h1>Doctors</h1>
 		<nav aria-label="breadcrumb">
 		  	<ol class="breadcrumb justify-content-center">
-			    <li class="breadcrumb-item"><a href="home">Home</a></li>
+			    <li class="breadcrumb-item"><a href="/">Home</a></li>
 			    <li class="breadcrumb-item active" aria-current="page">Doctors</li>
 		  	</ol>
 		</nav>
@@ -19,22 +18,89 @@
 <div class="page-content">
 	<div class="container">
 		<div class="row team pt_0 pb_40">
-			<div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
+			<div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
 				<div class="team-item">
 					<div class="team-photo">
-						<img src="img/doctor-1.jpg" alt="Doctor Photo">
+						<a href="/doctor/brent-grundy" class="team-photo-anchor">
+							<img src="/uploads/doctor-1.jpg" alt="Doctor Photo">
+						</a>
 					</div>
 					<div class="team-text">
-						<h4>Dr. Brent Grundy</h4>
-						<h4>Chairman, AA Hospital</h4>
-
+					<h4><a href="/doctor/brent-grundy">Dr. Brent Grundy</a></h4>
+					<p>Chairman, AA Hospital</p>
 						<div class="team-social">
 							<ul>
-								<li><a href="https://fr-fr.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="https://fr.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a></li>
-								<li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+								<li><a href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="http://www.linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="http://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i></a></li>
+								<li><a href="http://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+				<div class="team-item">
+					<div class="team-photo">
+						<a href="/doctor/robin-cook" class="team-photo-anchor">
+							<img src="/uploads/doctor-2.jpg" alt="Doctor Photo">
+						</a>
+					</div>
+					<div class="team-text">
+					<h4><a href="/doctor/robin-cook">Dr. Robin Cook</a></h4>
+					<p>Medicine, BB Hospital</p>
+						<div class="team-social">
+							<ul>
+								<li><a href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="http://www.linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="http://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i></a></li>
+								<li><a href="http://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+				<div class="team-item">
+					<div class="team-photo">
+						<a href="/doctor/bob-smith" class="team-photo-anchor">
+							<img src="/uploads/doctor-3.jpg" alt="Doctor Photo">
+						</a>
+					</div>
+					<div class="team-text">
+					<h4><a href="/doctor/bob-smith">Dr. Bob Smith</a></h4>
+					<p>Neurologist, CC Clinic</p>
+						<div class="team-social">
+							<ul>
+								<li><a href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="http://www.linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="http://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i></a></li>
+								<li><a href="http://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+				<div class="team-item">
+					<div class="team-photo">
+						<a href="/doctor/patrick-henderson" class="team-photo-anchor">
+							<img src="/uploads/doctor-4.jpg" alt="Doctor Photo">
+						</a>
+					</div>
+					<div class="team-text">
+					<h4><a href="/doctor/patrick-henderson">Dr. Patrick Henderson</a></h4>
+					<p>Cardiologist, DD Clinic</p>
+						<div class="team-social">
+							<ul>
+								<li><a href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="http://www.linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="http://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i></a></li>
+								<li><a href="http://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -44,91 +110,4 @@
 	</div>
 </div>
 
-<div class="page-content">
-	<div class="container">
-		<div class="row team pt_0 pb_40">
-			<div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
-				<div class="team-item">
-					<div class="team-photo">
-						<img src="img/doctor-2.jpg" alt="Doctor Photo">
-					</div>
-					<div class="team-text">
-						<h4>Dr. Robin Cook</h4>
-						<h4>Medecine, BB Hospital</h4>
-
-						<div class="team-social">
-							<ul>
-								<li><a href="https://fr-fr.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="https://fr.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a></li>
-								<li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="page-content">
-	<div class="container">
-		<div class="row team pt_0 pb_40">
-			<div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
-				<div class="team-item">
-					<div class="team-photo">
-						<img src="img/doctor-3.jpg" alt="Doctor Photo">
-					</div>
-					<div class="team-text">
-						<h4>Dr. Bob Smith</h4>
-						<h4>Neurologist, CC Clinic</h4>
-
-						<div class="team-social">
-							<ul>
-								<li><a href="https://fr-fr.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="https://fr.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a></li>
-								<li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="page-content">
-	<div class="container">
-		<div class="row team pt_0 pb_40">
-			<div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
-				<div class="team-item">
-					<div class="team-photo">
-						<img src="img/doctor-4.jpg" alt="Doctor Photo">
-					</div>
-					<div class="team-text">
-						<h4>Dr. Patrick Henderson</h4>
-						<h4>Cardiologist, DD Clinic</h4>
-
-						<div class="team-social">
-							<ul>
-								<li><a href="https://fr-fr.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="https://fr.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a></li>
-								<li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 @endsection
-=======
-<h1>DOCTORS</h1>
-@endsection
->>>>>>> 47659ee678877ab6d1440b726993d89563b9ba0c
