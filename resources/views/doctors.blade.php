@@ -2,11 +2,8 @@
 
 @section('content')
 
-<<<<<<< HEAD
 <!--<div class="page-banner" style="background-image: url(/uploads/page-banner-4.jpg)">
-=======
 <div class="page-banner" style="background-image: url(/uploads/page-banner-4.jpg)">
->>>>>>> 22b6e8d32d7bd31c12cd598a3ba76a4c6004b5ba
 	<div class="bg-page"></div>
 	<div class="text">
 		<h1>Doctors</h1>
@@ -112,7 +109,6 @@
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
 </div>-->
 
 <div class="page-content">
@@ -123,7 +119,7 @@
 					<div class="team-item">
 						<div class="team-photo">
 							<a href="" class="team-photo-anchor">
-								<img src={{$doctor->photo}} alt="Doctor Photo">
+								<img src="/uploads/{{$doctor->photo}}" alt="Doctor Photo">
 							</a>
 						</div>
 						<div class="team-text">
@@ -144,8 +140,6 @@
 			@endforeach
 		</div>
 	</div>
-=======
->>>>>>> 22b6e8d32d7bd31c12cd598a3ba76a4c6004b5ba
 </div>
 
 @endsection
