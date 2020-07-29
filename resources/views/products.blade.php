@@ -17,13 +17,14 @@
                                     <a href="javascript:void;" class="stock-empty">Stock is empty</a>
                                 @else
                                     <form action="#" method="post">
-                                    <input type="hidden" name="product_id" value="{{$product->product_id}}">
-                                        <input type="hidden" name="product_current_price" value="{{$product->product_current_price}}">
-                                        <input type="hidden" name="product_name" value="{{$product->product_name}}">
-                                        <input type="hidden" name="product_featured_photo" value="../index.html">
-                                        <input type="hidden" name="product_qty" value="1">
-                                        <input type="submit" value="Add to Cart" name="form_add_to_cart">
-                                    </form>
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{$product->product_id}}">
+                                            <input type="hidden" name="product_current_price" value="{{$product->product_current_price}}">
+                                            <input type="hidden" name="product_name" value="{{$product->product_name}}">
+                                            <input type="hidden" name="product_featured_photo" value="../index.html">
+                                            <input type="hidden" name="product_qty" value="1">
+                                            <input type="submit" value="Add to Cart" name="form_add_to_cart">
+                                        </form>
                                 @endif
                             </div>
                         </div>
