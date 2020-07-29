@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TblDoctor;
+use App\Models\TblVideo;
 
 class HomeController extends Controller
 {
@@ -43,7 +45,7 @@ class HomeController extends Controller
     {
         return view('products');
     }
-    
+
     public function news()
     {
         return view('news');
@@ -56,7 +58,7 @@ class HomeController extends Controller
 
     public function videoGallery()
     {
-        return view('video-gallery');
+        return view('video-gallery', ['videos'=> TblVideo::getAll()]);
     }
 
     public function faq()
@@ -66,7 +68,7 @@ class HomeController extends Controller
 
     public function doctors()
     {
-        return view('doctors');
+    return view('doctors', ['doctors'=> TblDoctor::getAll()]);
     }
 
     public function whoWeAre()
