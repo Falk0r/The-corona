@@ -54,4 +54,12 @@ class TblProduct extends Model
 		'meta_title',
 		'meta_description'
 	];
+
+	public static function getAll(){
+		return TblProduct::all();
+	}
+
+	public static function choose($request){
+		return TblProduct::find($request->id);
+ 	}
 }

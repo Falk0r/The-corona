@@ -6,6 +6,7 @@ use App\Models\TblPage;
 use App\Models\TblSettingHome;
 use Illuminate\Http\Request;
 use App\Models\TblDoctor;
+use App\Models\TblProduct;
 use App\Models\TblVideo;
 
 class HomeController extends Controller
@@ -44,7 +45,7 @@ class HomeController extends Controller
 
     public function products()
     {
-        return view('products', ['pageDatas'=> TblPage::choose('products')]);
+        return view('products', ['pageDatas'=> TblPage::choose('products'), 'products'=> TblProduct::getAll()]);
     }
 
     public function news()
