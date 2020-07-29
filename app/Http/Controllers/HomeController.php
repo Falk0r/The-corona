@@ -7,7 +7,10 @@ use App\Models\TblSettingHome;
 use Illuminate\Http\Request;
 use App\Models\TblDoctor;
 use App\Models\TblVideo;
+<<<<<<< HEAD
 use App\Models\TblPhoto;
+=======
+>>>>>>> 1d11e7d4980f5fa897dc58876f8cd27229e829ac
 
 class HomeController extends Controller
 {
@@ -55,7 +58,11 @@ class HomeController extends Controller
 
     public function photoGallery()
     {
+<<<<<<< HEAD
         return view('photo-gallery', ['pageDatas'=> TblPage::choose('photo-gallery'), 'photos'=> TblPhoto::getAll()]);
+=======
+        return view('photo-gallery', ['pageDatas'=> TblPage::choose('photo-gallery')]);
+>>>>>>> 1d11e7d4980f5fa897dc58876f8cd27229e829ac
     }
 
     public function videoGallery()
