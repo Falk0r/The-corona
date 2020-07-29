@@ -129,8 +129,8 @@ class TblSettingHome extends Model
 		'countrywise_status'
 	];
 
-	public static function getAll(){
-		return TblPage::all();
+	public static function giveData(){
+		return TblPage::find(1);
 	}
 	
 }

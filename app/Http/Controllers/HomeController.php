@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home', ['pageDatas'=> TblSettingHome::getAll()]);
+        return view('home', ['pageDatas'=> TblSettingHome::giveData()]);
     }
 
     public function about()
