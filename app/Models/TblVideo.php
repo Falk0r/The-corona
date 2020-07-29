@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class TblVideo
- * 
+ *
  * @property int $video_id
  * @property string $video_youtube
  * @property string $video_caption
@@ -33,4 +33,8 @@ class TblVideo extends Model
 		'video_caption',
 		'video_order'
 	];
+
+	public static function getAll(){
+		return TblVideo::all();
+	}
 }
