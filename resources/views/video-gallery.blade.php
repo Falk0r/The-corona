@@ -2,20 +2,6 @@
 
 @section('content')
 
-<div class="page-banner" style="background-image: url(/uploads/page-banner-10.jpg)">
-    <div class="bg-page"></div>
-    <div class="text">
-    	<h1>Video Gallery</h1>
-    	<nav aria-label="breadcrumb">
-    		  <ol class="breadcrumb justify-content-center">
-    			   <li class="breadcrumb-item"><a href="/">Home</a></li>
-    			   <li class="breadcrumb-item active" aria-current="page">Video Gallery</li>
-    		  </ol>
-    	</nav>
-    </div>
-</div>
-
-
 <div class="page-content mt_30">
     <div class="container">
     	<div class="row">

@@ -59,7 +59,7 @@ class HomeController extends Controller
 
     public function videoGallery()
     {
-        return view('video-gallery', ['pageDatas'=> TblPage::choose('video-gallery')]);
+        return view('video-gallery', ['pageDatas'=> TblPage::choose('video-gallery'), 'videos'=> TblVideo::getAll()]);
     }
 
     public function faq()
@@ -69,7 +69,7 @@ class HomeController extends Controller
 
     public function doctors()
     {
-        return view('doctors', ['pageDatas'=> TblPage::choose('doctors')]);
+        return view('doctors', ['pageDatas'=> TblPage::choose('doctors'), 'doctors'=> TblDoctor::getAll()]);
     }
 
     public function whoWeAre()
