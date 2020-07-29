@@ -39,4 +39,12 @@ class TblPage extends Model
 		'meta_title',
 		'meta_description'
 	];
+
+	public static function getAll(){
+		return TblDoctor::all();
+	}
+	
+	public static function choose($request){
+		return TblDoctor::find($request->id);
+	 }
 }

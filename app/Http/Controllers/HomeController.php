@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TblPage;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,10 +29,9 @@ class HomeController extends Controller
         return view('home');
     }
 
-
-    public function about()
+    public function about($request)
     {
-        return view('about');
+        return view('about', ['pageDatas'=> TblPage::choose($request)]);
     }
 
     public function preventions()

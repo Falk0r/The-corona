@@ -62,6 +62,7 @@
 
 <body>
     <div id="app">
+        {{ dd($pageDatas) }}
     {{-- dinamyc nav bar see how to deal with it, the actual navbar and header layouts are statics
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
