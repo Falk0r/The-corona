@@ -25,7 +25,7 @@ Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/preventions', 'HomeController@preventions')->name('preventions');
 Route::get('/products', 'HomeController@products')->name('products');
 Route::get('/news', 'HomeController@news')->name('news');
-Route::get('/contact', 'HomeController@news')->name('contact');
+Route::get('/contact', 'HomeController@contact')->name('contact');
 
 //Route::get('/jsbazar', 'HomeController@news')->name('pages');
 
@@ -38,6 +38,3 @@ Route::get('/what-we-do', 'HomeController@whatWeDo')->name('what-we-do');
 
 Route::get('/privacy-policy', 'HomeController@privacyPolicy')->name('privacy-policy');
 Route::get('/terms-and-conditions', 'HomeController@termsAndConditions')->name('terms-and-conditions');
-
-
-

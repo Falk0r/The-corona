@@ -128,4 +128,9 @@ class TblSettingHome extends Model
 		'countrywise_subtitle',
 		'countrywise_status'
 	];
+
+	public static function giveData(){
+		return TblPage::find(1);
+	}
+	
 }
