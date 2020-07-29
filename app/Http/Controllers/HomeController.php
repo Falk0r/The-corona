@@ -65,11 +65,6 @@ class HomeController extends Controller
         return view('faq');
     }
 
-    /*public function doctors()
-    {
-        return view('doctors');
-    }*/
-
     public function doctors()
     {
     return view('doctors', ['doctors'=> TblDoctor::getAll()]);
