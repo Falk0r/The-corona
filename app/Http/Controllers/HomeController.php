@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\TblPage;
 use App\Models\TblSettingHome;
 use Illuminate\Http\Request;
+use App\Models\TblDoctor;
+use App\Models\TblVideo;
 
 class HomeController extends Controller
 {
@@ -44,7 +46,7 @@ class HomeController extends Controller
     {
         return view('products', ['pageDatas'=> TblPage::choose('products')]);
     }
-    
+
     public function news()
     {
         return view('news', ['pageDatas'=> TblPage::choose('news')]);
