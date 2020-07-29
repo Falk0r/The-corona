@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>who we are</h1>
+<h1>photo gallery</h1>
 @endsection
