@@ -41,10 +41,10 @@ class TblPage extends Model
 	];
 
 	public static function getAll(){
-		return TblDoctor::all();
+		return TblPage::all();
 	}
 	
 	public static function choose($request){
-		return TblDoctor::find($request->id);
+		return TblPage::firstWhere('page_slug', $request);
 	 }
 }
