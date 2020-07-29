@@ -3,20 +3,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/3c7f5856f6.js" crossorigin="anonymous"></script>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
+    @if (isset($pageDatas))
+        <title>{{ $pageDatas->meta_title }}</title>
+    @else
+    <title>{{ $homeDatas->meta_title }}</title>
+    @endif
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Favicon -->
     <link href="uploads/favicon.png" rel="shortcut icon" type="image/png">
-		
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+
     {{-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
   
@@ -60,6 +67,7 @@
 
 <body>
     <div id="app">
+        {{-- {{ dd($pageDatas) }} --}}
     {{-- dinamyc nav bar see how to deal with it, the actual navbar and header layouts are statics
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

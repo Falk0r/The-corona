@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="page-banner" style="background-image: url(/uploads/page-banner-2.jpg)">
 	<div class="bg-page"></div>
 	<div class="text">

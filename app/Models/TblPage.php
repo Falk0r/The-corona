@@ -39,4 +39,12 @@ class TblPage extends Model
 		'meta_title',
 		'meta_description'
 	];
+
+	public static function getAll(){
+		return TblPage::all();
+	}
+	
+	public static function choose($request){
+		return TblPage::firstWhere('page_slug', $request);
+	 }
 }
