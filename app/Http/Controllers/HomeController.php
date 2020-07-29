@@ -30,7 +30,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home', ['pageDatas'=> TblSettingHome::giveData()]);
+        return view('home', ['homeDatas'=> TblSettingHome::giveData()]);
     }
 
     public function about()

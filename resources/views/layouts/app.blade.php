@@ -9,7 +9,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
-    <title>{{ $pageDatas->meta_title }}</title>
+    @if (isset($pageDatas))
+        <title>{{ $pageDatas->meta_title }}</title>
+    @else
+    <title>{{ $homeDatas->meta_title }}</title>
+    @endif
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
