@@ -74,9 +74,16 @@ class TblDoctor extends Model
 	public static function getAll(){
 		return TblDoctor::all();
 	}
+<<<<<<< HEAD
 
 	public static function choose($request){
 		return TblDoctor::find($request->id);
  	}
 	
+=======
+	
+	public static function choose($request){
+		return TblDoctor::find($request->id);
+	 }
+>>>>>>> 22b6e8d32d7bd31c12cd598a3ba76a4c6004b5ba
 }

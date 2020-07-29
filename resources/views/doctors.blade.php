@@ -2,7 +2,11 @@
 
 @section('content')
 
+<<<<<<< HEAD
 <!--<div class="page-banner" style="background-image: url(/uploads/page-banner-4.jpg)">
+=======
+<div class="page-banner" style="background-image: url(/uploads/page-banner-4.jpg)">
+>>>>>>> 22b6e8d32d7bd31c12cd598a3ba76a4c6004b5ba
 	<div class="bg-page"></div>
 	<div class="text">
 		<h1>Doctors</h1>
@@ -108,6 +112,7 @@
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
 </div>-->
 
 <div class="page-content">
@@ -139,6 +144,8 @@
 			@endforeach
 		</div>
 	</div>
+=======
+>>>>>>> 22b6e8d32d7bd31c12cd598a3ba76a4c6004b5ba
 </div>
 
 @endsection

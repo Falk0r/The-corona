@@ -100,4 +100,8 @@ class HomeController extends Controller
         return view('terms-and-conditions');
     }
 
+    public function testDoctors()
+    {
+        return view('test-doctors', ['doctors'=> TblDoctor::getAll()]);
+    }
 }
