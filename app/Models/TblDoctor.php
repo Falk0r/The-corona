@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class TblDoctor
- * 
+ *
  * @property int $id
  * @property string $name
  * @property string $slug
@@ -70,4 +70,13 @@ class TblDoctor extends Model
 		'meta_title',
 		'meta_description'
 	];
+
+	public static function getAll(){
+		return TblDoctor::all();
+	}
+
+	public static function choose($request){
+		return TblDoctor::find($request->id);
+ 	}
+	
 }

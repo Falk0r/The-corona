@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TblDoctor;
 
 class HomeController extends Controller
 {
@@ -43,7 +44,7 @@ class HomeController extends Controller
     {
         return view('products');
     }
-    
+
     public function news()
     {
         return view('news');
@@ -64,9 +65,14 @@ class HomeController extends Controller
         return view('faq');
     }
 
-    public function doctors()
+    /*public function doctors()
     {
         return view('doctors');
+    }*/
+
+    public function doctors()
+    {
+    return view('doctors', ['doctors'=> TblDoctor::getAll()]);
     }
 
     public function whoWeAre()
