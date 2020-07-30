@@ -28,7 +28,7 @@ a {
 }
 
 a:hover {
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 .bg-lightblue {
@@ -74,11 +74,11 @@ a:hover {
 	background: #f3f3f3!important;
 }
 .bg_137496 {
-	background: #137496!important;	
+	background: #137496!important;
 }
 
 .c_f3f3f3 {
-	color: #f3f3f3!important;	
+	color: #f3f3f3!important;
 }
 .fz_40 {
 	font-size: 40px!important;
@@ -278,15 +278,15 @@ a:hover {
 }
 
 .mobile-nav.mean-container .mean-nav ul li a.active,
-.main-nav nav .navbar-nav .nav-item a:hover, 
-.main-nav nav .navbar-nav .nav-item a:focus, 
+.main-nav nav .navbar-nav .nav-item a:hover,
+.main-nav nav .navbar-nav .nav-item a:focus,
 .main-nav nav .navbar-nav .nav-item a.active,
 .main-nav nav .navbar-nav .nav-item:hover a,
-.main-nav nav .navbar-nav .nav-item .dropdown-menu li a:hover, 
-.main-nav nav .navbar-nav .nav-item .dropdown-menu li a:focus, 
+.main-nav nav .navbar-nav .nav-item .dropdown-menu li a:hover,
+.main-nav nav .navbar-nav .nav-item .dropdown-menu li a:focus,
 .main-nav nav .navbar-nav .nav-item .dropdown-menu li a.active,
-.main-nav nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:hover, 
-.main-nav nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:focus, 
+.main-nav nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:hover,
+.main-nav nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:focus,
 .main-nav nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a.active,
 .main-nav nav .navbar-nav .nav-item .dropdown-menu li:hover a {
 	color: #137496;
@@ -1121,7 +1121,7 @@ a:hover {
 	.service .service-item .photo img {
 		object-fit: fill;
 		height: auto;
-	}	
+	}
 }
 
 
@@ -1790,7 +1790,7 @@ a:hover {
 	.blog-area .blog-image img {
 		object-fit: fill;
 		height: auto;
-	}	
+	}
 }
 
 
@@ -1953,7 +1953,7 @@ a:hover {
 }
 .footer-contact ul li:nth-child(2):before {
 	content: '\f003';
-	font-size: 14px;	
+	font-size: 14px;
 }
 .footer-contact ul li:nth-child(3):before {
 	content: '\f095';
@@ -2070,7 +2070,7 @@ a:hover {
 }
 
 .page-content ol li {
-	margin-bottom: 15px;	
+	margin-bottom: 15px;
 }
 
 
@@ -2454,7 +2454,7 @@ a:hover {
 	.team-photo img {
 		object-fit: fill;
 		height: auto;
-	}	
+	}
 }
 
 
@@ -2775,6 +2775,8 @@ a:hover {
 
 .contact-text p {
 	margin: 0;
+	width: 190px;
+	margin-left: 50px;
 }
 
 .contact-form textarea {
@@ -2909,7 +2911,7 @@ h4.contact-form-title {
 	.gallery-photo img {
 		object-fit: fill;
 		height: auto;
-	}	
+	}
 }
 
 
@@ -2990,7 +2992,7 @@ h4.contact-form-title {
 
 .product-item .text .cart-button a.stock-empty:hover {
 	background: #ead1d1;
-	color: #ff0000;	
+	color: #ff0000;
 }
 
 .product-item .text .cart-button a:hover,
@@ -3020,7 +3022,7 @@ h4.contact-form-title {
 	.product-item .photo img {
 		object-fit: fill;
 		height: auto;
-	}	
+	}
 }
 
 
@@ -3091,7 +3093,7 @@ h4.contact-form-title {
 
 .product-detail .nav-pills .nav-link {
 	background: #f1f5f9;
-	color: #137496;	
+	color: #137496;
 }
 
 .product-detail li.nav-item {
@@ -3127,7 +3129,7 @@ h4.contact-form-title {
 
 .product-detail a.stock-empty:hover {
 	background: #ead1d1;
-	color: #ff0000;	
+	color: #ff0000;
 }
 
 @media only screen and (max-width: 767px) {
@@ -3166,7 +3168,7 @@ h4.contact-form-title {
 @media only screen and (max-width: 767px) {
 	.cart-buttons {
 		margin-bottom: 30px;
-	}	
+	}
 }
 
 
@@ -3452,7 +3454,7 @@ h4.contact-form-title {
 	margin-right: 10px;
 	color: #333;
 }
-.nav-doctor .nav-link.active, 
+.nav-doctor .nav-link.active,
 .nav-doctor .show > .nav-link {
 	background: #137496;
 }

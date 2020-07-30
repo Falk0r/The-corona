@@ -39,6 +39,7 @@
     </div>
 </div>
 <div class="section">
+    @if (isset($pageDatas))
     <div class="page-banner" style="background-image: url(/uploads/{{ $pageDatas->banner }})">
         <div class="bg-page"></div>
         <div class="text">
@@ -51,3 +52,4 @@
             </nav>
         </div>
     </div>
+    @endif
