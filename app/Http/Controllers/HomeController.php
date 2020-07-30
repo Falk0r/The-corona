@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\TblDoctor;
 use App\Models\TblProduct;
 use App\Models\TblVideo;
+use App\Models\TblPhoto;
+
 
 class HomeController extends Controller
 {
@@ -55,7 +57,7 @@ class HomeController extends Controller
 
     public function photoGallery()
     {
-        return view('photo-gallery', ['pageDatas'=> TblPage::choose('photo-gallery')]);
+        return view('photo-gallery', ['pageDatas'=> TblPage::choose('photo-gallery'), 'photos'=> TblPhoto::getAll()]);
     }
 
     public function videoGallery()

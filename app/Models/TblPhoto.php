@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class TblPhoto
- * 
+ *
  * @property int $photo_id
  * @property string $photo_name
  * @property string $photo_caption
@@ -33,4 +33,8 @@ class TblPhoto extends Model
 		'photo_caption',
 		'photo_order'
 	];
+
+	public static function getAll(){
+		return TblPhoto::all();
+	}
 }
