@@ -1,30 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
 
 <div class="page-content">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-=======
-<div class="page-banner" style="background-image: url(/uploads/page-banner-7.jpg)">
-	<div class="bg-page"></div>
-	<div class="text">
-		<h1>Who We Are</h1>
-		<nav aria-label="breadcrumb">
-		  	<ol class="breadcrumb justify-content-center">
-			    <li class="breadcrumb-item"><a href="/">Home</a></li>
-			    <li class="breadcrumb-item active" aria-current="page">Who We Are</li>
-		  	</ol>
-		</nav>
-	</div>
-</div>
-<div class="page-content">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">				
->>>>>>> 7c4e34496db0bfa5ea462f9f3231a0796f15c393
 				<p>Lorem ipsum dolor sit amet, ea qui tation adversarium definitionem, eu labitur denique est. Ad duo quando recusabo petentium. Mea elit affert oportere ex. Ut error affert accusam pri. Sit no causae vidisse invenire, bonorum inermis nec ex.</p>
 
                 <p>Eam sint reformidans ex, ex doming iracundia his. Sint modus pro ne, vix ut omnis scripta corpora. Sea graecis suavitate te. Eum tantas possim torquatos ei. An qui falli sadipscing suscipiantur. At congue forensibus constituto his, erat vidit veniam vis eu, dico soleat possim nec ei.</p>
@@ -38,8 +19,5 @@
 		</div>
 	</div>
 </div>
-<<<<<<< HEAD
+
 @endsection
-=======
-@endsection
->>>>>>> 7c4e34496db0bfa5ea462f9f3231a0796f15c393
