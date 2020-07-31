@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class TblSettingContact
- * 
+ *
  * @property int $id
  * @property string $contact_address
  * @property string $contact_phone
@@ -28,4 +28,8 @@ class TblSettingContact extends Model
 		'contact_phone',
 		'contact_email'
 	];
+
+	public static function getAll(){
+		return TblSettingContact::all();
+	}
 }

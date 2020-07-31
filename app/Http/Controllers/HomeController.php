@@ -9,6 +9,9 @@ use App\Models\TblDoctor;
 use App\Models\TblProduct;
 use App\Models\TblVideo;
 use App\Models\TblPhoto;
+use App\Models\TblSettingContact;
+use App\Models\TblPrevention;
+use App\Models\TblFaq;
 
 
 class HomeController extends Controller
@@ -42,7 +45,7 @@ class HomeController extends Controller
 
     public function preventions()
     {
-        return view('preventions', ['pageDatas'=> TblPage::choose('preventions')]);
+        return view('preventions', ['pageDatas'=> TblPage::choose('preventions'), 'preventions'=> TblPrevention::getAll()]);
     }
 
     public function products()
@@ -67,7 +70,7 @@ class HomeController extends Controller
 
     public function faq()
     {
-        return view('faq', ['pageDatas'=> TblPage::choose('faq')]);
+        return view('faq', ['pageDatas'=> TblPage::choose('faq'), 'faq'=> TblFaq::getAll()]);
     }
 
     public function doctors()
@@ -87,7 +90,7 @@ class HomeController extends Controller
 
     public function contact()
     {
-        return view('contact', ['pageDatas'=> TblPage::choose('contact')]);
+        return view('contact', ['pageDatas'=> TblPage::choose('contact'), 'contact'=> TblSettingContact::getAll()]);
     }
 
     public function privacyPolicy()
