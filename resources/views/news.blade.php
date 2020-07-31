@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- {{dd($search_string)}} --}}
     <div class="page-content">
         <div class="container">
             <div class="row">

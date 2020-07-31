@@ -68,9 +68,11 @@ class TblNews extends Model
 	} 
 
 	public static function getBySearch($request){
-		$newses = TblNews::where('meta_description','LIKE', '%'.$request->search_string.'%')->paginate(5);
-		$search_string = $request;
-		return;
+		return TblNews::where('meta_description','LIKE', '%'.$request->search_string.'%')->paginate(5);
+	}
+
+	public static function searchTitle($request){
+		return $searchTitle = "Search by : $request";
 	}
 	
 	public function category(){

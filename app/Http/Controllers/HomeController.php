@@ -59,7 +59,7 @@ class HomeController extends Controller
 
     public function searchArtcl(Request $request)
     {
-        return view('news', ['newses'=> TblNews::getBySearch($request), 'pageDatas'=> TblPage::choose('news'), 'categories'=> TblCategory::getAll(), 'newsSide'=> TblNews::getAllTime()]);
+        return view('news', ['searchTitle'=> TblNews::searchTitle($request), 'newses'=> TblNews::getBySearch($request), 'pageDatas'=> TblPage::choose('news'), 'categories'=> TblCategory::getAll(), 'newsSide'=> TblNews::getAllTime()]);
     }
 
     public function newsByCategory($cat_slug)
