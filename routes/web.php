@@ -24,7 +24,12 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/preventions', 'HomeController@preventions')->name('preventions');
 Route::get('/products', 'HomeController@products')->name('products');
+
 Route::get('/news', 'HomeController@news')->name('news');
+Route::post('/search', 'HomeController@searchArtcl')->name('search');
+Route::get('/category/{cat_slug}', 'HomeController@newsByCategory')->name('category');
+
+
 Route::get('/contact', 'HomeController@contact')->name('contact');
 
 //Route::get('/jsbazar', 'HomeController@news')->name('pages');

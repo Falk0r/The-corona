@@ -39,4 +39,16 @@ class TblCategory extends Model
 		'meta_title',
 		'meta_description'
 	];
+
+	public static function getAll(){
+		return TblCategory::all();
+	}
+
+	public static function choose($request){
+		return TblCategory::find($request->id);
+	}
+	 
+	public function news(){
+		return $this->belongsToMany('App\Models\TblNews');
+	}
 }
