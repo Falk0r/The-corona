@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'tblcustomers',
     ],
 
     /*
@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'tblcustomers',
         ],
 
         'api' => [
@@ -70,6 +70,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+        'tblcustomers' => [
+            'driver' => 'eloquent',
+            'model' => App\TblCustomer::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
@@ -98,6 +102,11 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
+        ],
+        'tblcustomers' => [
+            'provider' => 'tblcustomers',
+            'table' => 'password_resets',
+            'expire' => 60,
         ],
     ],
 
