@@ -99,5 +99,9 @@ class NavController extends Controller
     {
         return view('terms-and-conditions', ['pageDatas'=> TblPage::choose('terms-and-conditions')]);
     }
+    public function customerDashboard()
+    {
+        return view('customers.customer-dashboard', ['homeDatas'=> TblSettingHome::giveData()]);
+    }
 
 }

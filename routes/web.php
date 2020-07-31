@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-//Auth::routes();
 Route::get('/', 'NavController@index')->name('home');
 Route::get('/about', 'NavController@about')->name('about');
 Route::get('/preventions', 'NavController@preventions')->name('preventions');
@@ -42,5 +41,5 @@ Route::get('/terms-and-conditions', 'NavController@termsAndConditions')->name('t
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::view('/registration', 'auth.register');
+Route::get('/customer-dashboard', 'NavController@customerDashboard')->middleware('auth');
