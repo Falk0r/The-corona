@@ -43,3 +43,4 @@ Route::get('/terms-and-conditions', 'NavController@termsAndConditions')->name('t
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::view('/registration', 'auth.register');

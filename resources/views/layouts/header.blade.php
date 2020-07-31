@@ -28,8 +28,20 @@
                     </div>
                     <div class="top-profile">
                         <ul>
-                            <li><a href="login">Login</a></li>
-                            <li><a href="registration">Registration</a></li>
+                            <!-- Authentication Links -->
+                            @guest
+                                <li><a href="login">Login</a></li>
+                                <li><a href="registration">Registration</a></li>
+                            @else
+                                <li><a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}</a></li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                <li><a href="dashboard">Dashboard</a></li>
+                            @endguest
                             <li class="cart"><a href="cart">Cart</a></li>
                         </ul>
                     </div>
