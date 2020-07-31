@@ -66,10 +66,10 @@ return [
     */
 
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\User::class,
-        ],
+        // 'users' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\TblCustomer::class,
+        // ],
         'tblcustomers' => [
             'driver' => 'eloquent',
             'model' => App\TblCustomer::class,
@@ -97,12 +97,12 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
-            'table' => 'password_resets',
-            'expire' => 60,
-            'throttle' => 60,
-        ],
+        // 'users' => [
+        //     'provider' => 'users',
+        //     'table' => 'password_resets',
+        //     'expire' => 60,
+        //     'throttle' => 60,
+        // ],
         'tblcustomers' => [
             'provider' => 'tblcustomers',
             'table' => 'password_resets',

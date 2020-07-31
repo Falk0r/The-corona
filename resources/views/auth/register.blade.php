@@ -60,7 +60,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="">Address *</label>
-										<input type="text" class="form-control" value="" name="address">
+										<input type="text" class="form-control" value="" name="adress">
 									</div>
 								</div>
 								<div class="col-md-6">
