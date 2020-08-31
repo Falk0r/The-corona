@@ -44,6 +44,12 @@ class TblCategory extends Model
 		return TblCategory::all();
 	}
 
+	public static function getByCat($cat_slug){
+		return TblCategory::where('category_slug', $cat_slug)->paginate(5);
+		// $selectCat = TblNews::find($request->id);
+		// return $selectCat;
+	} 
+
 	public static function choose($request){
 		return TblCategory::find($request->id);
 	}

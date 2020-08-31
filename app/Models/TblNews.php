@@ -64,7 +64,7 @@ class TblNews extends Model
 	 }
 
 	public static function getByCat($cat_slug){
-		return TblNews::where('category_slug', $cat_slug)->paginate(5);
+		return TblCategory::where('category_slug', $cat_slug)->paginate(5);
 	} 
 
 	public static function getBySearch($request){
@@ -72,7 +72,8 @@ class TblNews extends Model
 	}
 
 	public static function searchTitle($request){
-		return $searchTitle = "Search by : $request";
+		// Return Title print in the band (search by: reserch)
+		return $searchTitle = "Search by : $request->search_string";
 	}
 	
 	public function category(){
