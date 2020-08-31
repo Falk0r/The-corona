@@ -43,3 +43,5 @@ Auth::routes();
 
 Route::view('/registration', 'auth.register');
 Route::get('/customer-dashboard', 'NavController@customerDashboard')->middleware('auth');
+
+// Route::view('/customer-dashboard', 'customers.customer-dashboard');
