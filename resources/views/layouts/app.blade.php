@@ -17,6 +17,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/custom.js') }}" defer></script>
 
     <!-- Favicon -->
     <link href="uploads/favicon.png" rel="shortcut icon" type="image/png">

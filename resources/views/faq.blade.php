@@ -16,7 +16,7 @@
 							</div>
 	                    	<div id="collapse{{$faqs->faq_id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{$faqs->faq_id}}">
 	                        	<div class="panel-body">
-	                            	<p>{{$faqs->faq_content}}</p>
+	                            	<p>{!!$faqs->faq_content!!}</p>
 	                        	</div>
 	                    	</div>
 						</div>
