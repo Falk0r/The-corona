@@ -113,5 +113,9 @@ class NavController extends Controller
     {
         return view('customers.customer-delivery-track', ['homeDatas'=> TblSettingHome::giveData()]);
     }
+    public function customerEditProfile()
+    {
+        return view('customers.customer-edit-profile', ['homeDatas'=> TblSettingHome::giveData()]);
+    }
 
 }

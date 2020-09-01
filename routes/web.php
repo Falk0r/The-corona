@@ -46,4 +46,5 @@ Route::view('/registration', 'auth.register');
 Route::get('/customer-dashboard', 'NavController@customerDashboard')->middleware('auth');
 Route::get('/customer-order', 'NavController@customerOrder')->middleware('auth');
 Route::get('/customer-delivery-track', 'NavController@customerDeliveryTrack')->middleware('auth');
+Route::get('/customer-edit-profile', 'NavController@customerEditProfile')->middleware('auth');
 
