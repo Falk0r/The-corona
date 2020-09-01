@@ -99,6 +99,8 @@ class NavController extends Controller
     {
         return view('terms-and-conditions', ['pageDatas'=> TblPage::choose('terms-and-conditions')]);
     }
+
+    //Customer's function
     public function customerDashboard()
     {
         return view('customers.customer-dashboard', ['homeDatas'=> TblSettingHome::giveData()]);
@@ -106,6 +108,10 @@ class NavController extends Controller
     public function customerOrder()
     {
         return view('customers.customer-order', ['homeDatas'=> TblSettingHome::giveData()]);
+    }
+    public function customerDeliveryTrack()
+    {
+        return view('customers.customer-delivery-track', ['homeDatas'=> TblSettingHome::giveData()]);
     }
 
 }
