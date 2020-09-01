@@ -23,7 +23,10 @@
                             <li><a href="/customer-delivery-track" class="btn btn-md btn-block btn-dark">Delivery Track</a></li>
                             <li><a href="/customer-edit-profile" class="btn btn-md btn-block btn-dark">Edit Profile</a></li>
                             <li><a href="/customer-edit-password" class="btn btn-md btn-block btn-dark">Edit Password</a></li>
-                            <li><a href="/logout" class="btn btn-md btn-block btn-dark">Logout</a></li>
+                            <li><a href="{{ route('logout') }}" class="btn btn-md btn-block btn-dark" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
