@@ -103,5 +103,9 @@ class NavController extends Controller
     {
         return view('customers.customer-dashboard', ['homeDatas'=> TblSettingHome::giveData()]);
     }
+    public function customerOrder()
+    {
+        return view('customers.customer-order', ['homeDatas'=> TblSettingHome::giveData()]);
+    }
 
 }

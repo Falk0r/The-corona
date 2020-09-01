@@ -41,7 +41,8 @@ Route::get('/terms-and-conditions', 'NavController@termsAndConditions')->name('t
 
 Auth::routes();
 
+//Routes Customers
 Route::view('/registration', 'auth.register');
 Route::get('/customer-dashboard', 'NavController@customerDashboard')->middleware('auth');
+Route::get('/customer-order', 'NavController@customerOrder')->middleware('auth');
 
-// Route::view('/customer-dashboard', 'customers.customer-dashboard');
