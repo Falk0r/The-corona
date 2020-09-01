@@ -19,15 +19,19 @@
 			<div class="col-md-3">				
 				<div class="user-sidebar">
 					<ul>
-	<li><a href="/customer-dashboard" class="btn btn-md btn-block btn-dark">Dashboard</a></li>
-	<li><a href="/customer-order" class="btn btn-md btn-block btn-dark">Orders</a></li>
-	<li><a href="/customer-delivery-track" class="btn btn-md btn-block btn-dark">Delivery Track</a></li>
-	<li><a href="/customer-edit-profile" class="btn btn-md btn-block btn-dark">Edit Profile</a></li>
-	<li><a href="/customer-edit-password" class="btn btn-md btn-block btn-dark">Edit Password</a></li>
-	<li><a href="/logout" class="btn btn-md btn-block btn-dark">Logout</a></li>
-</ul>				</div>
+						<li><a href="/customer-dashboard" class="btn btn-md btn-block btn-dark">Dashboard</a></li>
+						<li><a href="/customer-order" class="btn btn-md btn-block btn-dark">Orders</a></li>
+						<li><a href="/customer-delivery-track" class="btn btn-md btn-block btn-dark">Delivery Track</a></li>
+						<li><a href="/customer-edit-profile" class="btn btn-md btn-block btn-dark">Edit Profile</a></li>
+						<li><a href="/customer-edit-password" class="btn btn-md btn-block btn-dark">Edit Password</a></li>
+						<li><a href="{{ route('logout') }}" class="btn btn-md btn-block btn-dark" onclick="event.preventDefault();
+							document.getElementById('logout-form').submit();">
+							{{ __('Logout') }}</a>
+						</li>
+					</ul>				
+				</div>
 			</div>
-						<div class="col-md-9">
+			<div class="col-md-9">
 				<div class="row dashboard-stat">
 					<div class="col-md-6 dashboard-stat-item">
                         <div class="bg-info p_20 pt_30 pb_30 text-center text-white">
