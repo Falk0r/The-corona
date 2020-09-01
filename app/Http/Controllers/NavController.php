@@ -117,5 +117,9 @@ class NavController extends Controller
     {
         return view('customers.customer-edit-profile', ['homeDatas'=> TblSettingHome::giveData()]);
     }
+    public function customerEditPassword()
+    {
+        return view('customers.customer-edit-password', ['homeDatas'=> TblSettingHome::giveData()]);
+    }
 
 }

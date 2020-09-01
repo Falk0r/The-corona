@@ -47,4 +47,5 @@ Route::get('/customer-dashboard', 'NavController@customerDashboard')->middleware
 Route::get('/customer-order', 'NavController@customerOrder')->middleware('auth');
 Route::get('/customer-delivery-track', 'NavController@customerDeliveryTrack')->middleware('auth');
 Route::get('/customer-edit-profile', 'NavController@customerEditProfile')->middleware('auth');
+Route::get('/customer-edit-password', 'NavController@customerEditPassword')->middleware('auth');
 
