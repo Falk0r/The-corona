@@ -19,7 +19,7 @@
                 <div class="col-md-3">				
                     <div class="user-sidebar">
                         <ul>
-                            <li><a href="/customer-dashboard" class="btn btn-md btn-block btn-dark">Dashboard</a></li>
+                            <li><a href="{{ route('Dashboard') }}" class="btn btn-md btn-block btn-dark">{{ __('Dashboard') }}</a></li>
                             <li><a href="/customer-order" class="btn btn-md btn-block btn-dark">Orders</a></li>
                             <li><a href="/customer-delivery-track" class="btn btn-md btn-block btn-dark">Delivery Track</a></li>
                             <li><a href="/customer-edit-profile" class="btn btn-md btn-block btn-dark">Edit Profile</a></li>
