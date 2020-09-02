@@ -51,6 +51,12 @@ class TblNews extends Model
 		'meta_description'
 	];
 
+	public function categories(){
+		return $this->belongsTo('App\Models\TblCategory', 'category_id', 'category_id');
+		// return $this->hasMany('App\Models\TblCategory', 'category_id', 'category_id');
+
+	}
+
 	public static function getAllTime(){
 		return TblNews::all()->sortByDesc('news_order');	
 	}
@@ -64,7 +70,11 @@ class TblNews extends Model
 	 }
 
 	public static function getByCat($cat_slug){
-		return TblCategory::where('category_slug', $cat_slug)->paginate(5);
+		$category = TblCategory::where('category_slug', $cat_slug)->first();
+		$cat_id = $category->category_id;
+		$result = TblNews::where('category_id', $cat_id);
+		dd($result);
+		return $result;
 	} 
 
 	public static function getBySearch($request){
@@ -75,10 +85,4 @@ class TblNews extends Model
 		// Return Title print in the band (search by: reserch)
 		return $searchTitle = "Search by : $request->search_string";
 	}
-	
-	public function category(){
-		return $this->belongsToMany('App\Models\TblCategory');
-	}
-	
-	
 }

@@ -1,4 +1,5 @@
 {{-- {{dd($newses)}} --}}
+
 @extends('layouts.app')
 
 @section('content')
