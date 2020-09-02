@@ -11,12 +11,12 @@
 						<div class="panel panel-default">
 							<div class="panel-heading" role="tab" id="heading{{$faqs->faq_id}}">
 	                        	<h4 class="panel-title">
-	                            	<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapse{{$faqs->faq_id}}" aria-expanded="false" aria-controls="collapse{{$faqs->faq_id}}">{{$faqs->faq_title}}</a>
-	                        	</h4>
+	 								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapse{{$faqs->faq_id}}" aria-expanded="false" aria-controls="collapse{{$faqs->faq_id}}">{{$faqs->faq_title}}</a>
+								</h4>
 							</div>
 	                    	<div id="collapse{{$faqs->faq_id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{$faqs->faq_id}}">
-	                        	<div class="panel-body">
-	                            	<p>{!!$faqs->faq_content!!}</p>
+								<div class="panel-body">
+	                           		<p>{!!$faqs->faq_content!!}</p>
 	                        	</div>
 	                    	</div>
 						</div>
@@ -26,7 +26,6 @@
 		</div>
 	</div>
 </div>
-
 
 
 @endsection
