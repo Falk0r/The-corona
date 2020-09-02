@@ -43,11 +43,15 @@
     <div class="page-banner" style="background-image: url(/uploads/{{ $pageDatas->banner }})">
         <div class="bg-page"></div>
         <div class="text">
-        <h1>{{ $pageDatas->page_name }}</h1>
+            @if (isset($searchTitle))
+                <h1>{{$searchTitle}}</h1>
+            @else
+            <h1>{{$urlRelatif = Route::getCurrentRoute()->uri()}}</h1>
+            @endif
             <nav aria-label="breadcrumb">
                   <ol class="breadcrumb justify-content-center">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ $pageDatas->page_name }}</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{$urlRelatif = Route::getCurrentRoute()->uri()}}</li>
                   </ol>
             </nav>
         </div>

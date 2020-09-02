@@ -94,7 +94,7 @@
 $('#pills-1').addClass('show active');
 $('#pills-2-tab').addClass('disabled');
 $('#pills-3-tab').addClass('disabled');
-    
+
 
 $('#s1_next').on('click',function() {
 
@@ -149,7 +149,7 @@ $('#pills-3-tab').addClass('disabled');
 });
 </script>
 <script>
-    function printDiv(divName = 'printablediv') 
+    function printDiv(divName = 'printablediv')
     {
         var printContents = document.getElementById(divName).innerHTML;
         var originalContents = document.body.innerHTML;
@@ -159,4 +159,4 @@ $('#pills-3-tab').addClass('disabled');
     }
 </script>
 <iframe name="stripeXDM_default20388_provider" id="stripeXDM_default20388_provider" aria-hidden="true" src="https://js.stripe.com/v2/channel.html?stripe_xdm_e=https%3A%2F%2F8080-b3d43794-13ee-40b0-b80d-4c7ec1b0e646.ws-eu01.gitpod.io&amp;stripe_xdm_c=default20388&amp;stripe_xdm_p=1#__stripe_transport__" frameborder="0" style="position: absolute; top: -2000px; left: 0px;"></iframe>
-<iframe src="https://js.stripe.com/v2/m/outer.html#referrer=https%3A%2F%2F8080-b3d43794-13ee-40b0-b80d-4c7ec1b0e646.ws-eu01.gitpod.io%2Fpage%2Fdoctors&amp;title=About%20Us&amp;url=https%3A%2F%2F8080-b3d43794-13ee-40b0-b80d-4c7ec1b0e646.ws-eu01.gitpod.io%2Fpage%2Fabout&amp;muid=57b390d7-0cdd-4c82-a86a-8a4fe8b31bf4&amp;sid=890cc54b-e7c9-4a37-9c33-3d846632c97e&amp;preview=false&amp;" frameborder="0" allowtransparency="true" scrolling="no" tabindex="-1" aria-hidden="true" style="width: 1px !important; height: 1px !important; position: fixed !important; visibility: hidden !important; pointer-events: none !important;"></iframe>
+<iframe src="https://js.stripe.com/v2/m/outer.html#referrer=https%3A%2F%2F8080-b3d43794-13ee-40b0-b80d-4c7ec1b0e646.ws-eu01.gitpod.io%2Fpage%2Fdoctors&amp;title=About%20Us&amp;url=https%3A%2F%2F8080-b3d43794-13ee-40b0-b80d-4c7ec1b0e646.ws-eu01.gitpod.io%2Fpage%2Fabout&amp;muid=57b390d7-0cdd-4c82-a86a-8a4fe8b31bf4&amp;sid=890cc54b-e7c9-4a37-9c33-3d846632c97e&amp;preview=false&amp;" frameborder="0" allowtransparency="true" scrolling="no" tabindex="-1" aria-hidden="true" style="width: 1px !important; height: 1px !important; position: fixed !important; visibility: hidden !important; pointer-events: none !important;"></iframe> 

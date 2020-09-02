@@ -15,10 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', 'NavController@index')->name('home');
 Route::get('/about', 'NavController@about')->name('about');
 Route::get('/preventions', 'NavController@preventions')->name('preventions');
@@ -26,7 +22,6 @@ Route::get('/products', 'NavController@products')->name('products');
 Route::get('/news', 'NavController@news')->name('news');
 Route::get('/contact', 'NavController@contact')->name('contact');
 
-//Route::get('/jsbazar', 'NavController@news')->name('pages');
 
 Route::get('/photo-gallery', 'NavController@photoGallery')->name('photo-gallery');
 Route::get('/video-gallery', 'NavController@videoGallery')->name('video-gallery');
@@ -38,6 +33,8 @@ Route::get('/what-we-do', 'NavController@whatWeDo')->name('what-we-do');
 Route::get('/privacy-policy', 'NavController@privacyPolicy')->name('privacy-policy');
 Route::get('/terms-and-conditions', 'NavController@termsAndConditions')->name('terms-and-conditions');
 
+Route::post('/search', 'NavController@searchArtcl')->name('search');
+Route::get('/category/{cat_slug}', 'NavController@newsByCategory')->name('category');
 
 Auth::routes();
 
@@ -48,4 +45,3 @@ Route::get('/customer-order', 'NavController@customerOrder')->middleware('auth')
 Route::get('/customer-delivery-track', 'NavController@customerDeliveryTrack')->middleware('auth')->name('Delivery Track');
 Route::get('/customer-edit-profile', 'NavController@customerEditProfile')->middleware('auth')->name('Edit Profile');
 Route::get('/customer-edit-password', 'NavController@customerEditPassword')->middleware('auth')->name('Edit Password');
-

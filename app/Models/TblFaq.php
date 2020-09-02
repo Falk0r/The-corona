@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class TblFaq
- * 
+ *
  * @property int $faq_id
  * @property string $faq_title
  * @property string $faq_content
@@ -33,4 +33,8 @@ class TblFaq extends Model
 		'faq_content',
 		'faq_order'
 	];
+
+	public static function getAll(){
+		return TblFaq::all();
+	}
 }
