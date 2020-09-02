@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class TblPrevention
- * 
+ *
  * @property int $id
  * @property string $name
  * @property string $slug
@@ -44,4 +44,8 @@ class TblPrevention extends Model
 		'prevention_order',
 		'status'
 	];
+
+	public static function getAll(){
+		return TblPrevention::all();
+	}
 }
