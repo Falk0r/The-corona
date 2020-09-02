@@ -17,12 +17,14 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/custom.js') }}" defer></script>
 
     <!-- Favicon -->
     <link href="uploads/favicon.png" rel="shortcut icon" type="image/png">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+
 
     {{-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
@@ -48,7 +50,7 @@
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css" /> --}}
 
         <!-- All JS -->
-{{--
+
     <script src="https://kit.fontawesome.com/3c7f5856f6.js" crossorigin="anonymous"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="https://js.stripe.com/v2/"></script>
@@ -63,7 +65,7 @@
     <script src="/js/jquery.dataTables.min.js"></script>
     <script src="/js/select2.full.js"></script>
     <script src="/js/sweetalert2.min.js"></script>
-    <script src="https://kit.fontawesome.com/bac71461de.js" crossorigin="anonymous"></script> --}}
+    <script src="https://kit.fontawesome.com/bac71461de.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
