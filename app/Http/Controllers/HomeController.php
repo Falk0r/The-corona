@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
+use Illuminate\Http\Request;
+
+//A remplacer dans NavController
 use App\Models\TblCategory;
 use App\Models\TblPage;
 use App\Models\TblSettingHome;
@@ -14,7 +18,7 @@ use App\Models\TblPhoto;
 use App\Models\TblSettingContact;
 use App\Models\TblPrevention;
 use App\Models\TblFaq;
-
+//Fin de remplacer
 
 class HomeController extends Controller
 {
@@ -23,12 +27,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
-
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Show the application dashboard.
@@ -37,23 +39,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home', ['homeDatas'=> TblSettingHome::giveData()]);
-    }
 
-    public function about()
-    {
-        return view('about', ['pageDatas'=> TblPage::choose('about')]);
+        return view('home');
     }
+  
+    // Fonction à rebasculer dans NavController
 
     public function preventions()
     {
         return view('preventions', ['pageDatas'=> TblPage::choose('preventions'), 'preventions'=> TblPrevention::getAll()]);
     }
 
-    public function products()
-    {
-        return view('products', ['pageDatas'=> TblPage::choose('products'), 'products'=> TblProduct::getAll()]);
-    }
 
 // --------------------news functions-----------------------------------
 
@@ -74,49 +70,17 @@ class HomeController extends Controller
 
 // --------------------others functions-----------------------------------
 
-    public function photoGallery()
-    {
-        return view('photo-gallery', ['pageDatas'=> TblPage::choose('photo-gallery'), 'photos'=> TblPhoto::getAll()]);
-    }
 
-    public function videoGallery()
-    {
-        return view('video-gallery', ['pageDatas'=> TblPage::choose('video-gallery'), 'videos'=> TblVideo::getAll()]);
-    }
 
     public function faq()
     {
         return view('faq', ['pageDatas'=> TblPage::choose('faq'), 'faq'=> TblFaq::getAll()]);
     }
 
-    public function doctors()
-    {
-        return view('doctors', ['pageDatas'=> TblPage::choose('doctors'), 'doctors'=> TblDoctor::getAll()]);
-    }
-
-    public function whoWeAre()
-    {
-        return view('who-we-are', ['pageDatas'=> TblPage::choose('who-we-are')]);
-    }
-
-    public function whatWeDo()
-    {
-        return view('what-we-do', ['pageDatas'=> TblPage::choose('what-we-do')]);
-    }
 
     public function contact()
     {
         return view('contact', ['pageDatas'=> TblPage::choose('contact'), 'contact'=> TblSettingContact::getAll()]);
-    }
-
-    public function privacyPolicy()
-    {
-        return view('privacy-policy', ['pageDatas'=> TblPage::choose('privacy-policy')]);
-    }
-
-    public function termsAndConditions()
-    {
-        return view('terms-and-conditions', ['pageDatas'=> TblPage::choose('terms-and-conditions')]);
     }
 
 }

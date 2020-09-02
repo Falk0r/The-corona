@@ -1,7 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,31 +15,33 @@ use Illuminate\Auth;
 */
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-//Auth::routes();
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/about', 'HomeController@about')->name('about');
-Route::get('/preventions', 'HomeController@preventions')->name('preventions');
-Route::get('/products', 'HomeController@products')->name('products');
-
-Route::get('/news', 'HomeController@news')->name('news');
-Route::post('/search', 'HomeController@searchArtcl')->name('search');
-Route::get('/category/{cat_slug}', 'HomeController@newsByCategory')->name('category');
+Route::get('/', 'NavController@index')->name('home');
+Route::get('/about', 'NavController@about')->name('about');
+Route::get('/preventions', 'NavController@preventions')->name('preventions');
+Route::get('/products', 'NavController@products')->name('products');
+Route::get('/news', 'NavController@news')->name('news');
+Route::get('/contact', 'NavController@contact')->name('contact');
 
 
-Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::get('/photo-gallery', 'NavController@photoGallery')->name('photo-gallery');
+Route::get('/video-gallery', 'NavController@videoGallery')->name('video-gallery');
+Route::get('/faq', 'NavController@faq')->name('faq');
+Route::get('/doctors', 'NavController@doctors')->name('doctors');
+Route::get('/who-we-are', 'NavController@whoWeAre')->name('who-we-are');
+Route::get('/what-we-do', 'NavController@whatWeDo')->name('what-we-do');
 
-//Route::get('/jsbazar', 'HomeController@news')->name('pages');
+Route::get('/privacy-policy', 'NavController@privacyPolicy')->name('privacy-policy');
+Route::get('/terms-and-conditions', 'NavController@termsAndConditions')->name('terms-and-conditions');
 
-Route::get('/photo-gallery', 'HomeController@photoGallery')->name('photo-gallery');
-Route::get('/video-gallery', 'HomeController@videoGallery')->name('video-gallery');
-Route::get('/faq', 'HomeController@faq')->name('faq');
-Route::get('/doctors', 'HomeController@doctors')->name('doctors');
-Route::get('/who-we-are', 'HomeController@whoWeAre')->name('who-we-are');
-Route::get('/what-we-do', 'HomeController@whatWeDo')->name('what-we-do');
+Route::post('/search', 'NavController@searchArtcl')->name('search');
+Route::get('/category/{cat_slug}', 'NavController@newsByCategory')->name('category');
 
-Route::get('/privacy-policy', 'HomeController@privacyPolicy')->name('privacy-policy');
-Route::get('/terms-and-conditions', 'HomeController@termsAndConditions')->name('terms-and-conditions');
+Auth::routes();
+
+//Routes Customers
+Route::view('/registration', 'auth.register');
+Route::get('/customer-dashboard', 'NavController@customerDashboard')->middleware('auth')->name('Dashboard');
+Route::get('/customer-order', 'NavController@customerOrder')->middleware('auth')->name('Orders');
+Route::get('/customer-delivery-track', 'NavController@customerDeliveryTrack')->middleware('auth')->name('Delivery Track');
+Route::get('/customer-edit-profile', 'NavController@customerEditProfile')->middleware('auth')->name('Edit Profile');
+Route::get('/customer-edit-password', 'NavController@customerEditPassword')->middleware('auth')->name('Edit Password');
