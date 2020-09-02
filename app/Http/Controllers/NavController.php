@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TblCategory;
 use App\Models\TblPage;
 use App\Models\TblSettingHome;
 use Illuminate\Http\Request;
 use App\Models\TblDoctor;
+use App\Models\TblNews;
 use App\Models\TblProduct;
 use App\Models\TblVideo;
 use App\Models\TblPhoto;
+use App\Models\TblSettingContact;
+use App\Models\TblPrevention;
+use App\Models\TblFaq;
 
 
 class NavController extends Controller
@@ -40,21 +45,6 @@ class NavController extends Controller
         return view('about', ['pageDatas'=> TblPage::choose('about')]);
     }
 
-    public function preventions()
-    {
-        return view('preventions', ['pageDatas'=> TblPage::choose('preventions')]);
-    }
-
-    public function products()
-    {
-        return view('products', ['pageDatas'=> TblPage::choose('products'), 'products'=> TblProduct::getAll()]);
-    }
-
-    public function news()
-    {
-        return view('news', ['pageDatas'=> TblPage::choose('news')]);
-    }
-
     public function photoGallery()
     {
         return view('photo-gallery', ['pageDatas'=> TblPage::choose('photo-gallery'), 'photos'=> TblPhoto::getAll()]);
@@ -63,11 +53,6 @@ class NavController extends Controller
     public function videoGallery()
     {
         return view('video-gallery', ['pageDatas'=> TblPage::choose('video-gallery'), 'videos'=> TblVideo::getAll()]);
-    }
-
-    public function faq()
-    {
-        return view('faq', ['pageDatas'=> TblPage::choose('faq')]);
     }
 
     public function doctors()
@@ -85,11 +70,6 @@ class NavController extends Controller
         return view('what-we-do', ['pageDatas'=> TblPage::choose('what-we-do')]);
     }
 
-    public function contact()
-    {
-        return view('contact', ['pageDatas'=> TblPage::choose('contact')]);
-    }
-
     public function privacyPolicy()
     {
         return view('privacy-policy', ['pageDatas'=> TblPage::choose('privacy-policy')]);
@@ -99,6 +79,50 @@ class NavController extends Controller
     {
         return view('terms-and-conditions', ['pageDatas'=> TblPage::choose('terms-and-conditions')]);
     }
+
+    public function preventions()
+    {
+        return view('preventions', ['pageDatas'=> TblPage::choose('preventions'), 'preventions'=> TblPrevention::getAll()]);
+    }
+
+    public function products()
+    {
+        return view('products', ['pageDatas'=> TblPage::choose('products'), 'products'=> TblProduct::getAll()]);
+    }
+
+
+// --------------------news functions-----------------------------------
+
+    public function news()
+    {
+        return view('news', ['newses'=> TblNews::getAllTimePaginate(), 'pageDatas'=> TblPage::choose('news'), 'categories'=> TblCategory::getAll(), 'newsSide'=> TblNews::getAllTime()]);
+    }
+
+    public function searchArtcl(Request $request)
+    {
+        return view('news', ['searchTitle'=> TblNews::searchTitle($request), 'newses'=> TblNews::getBySearch($request), 'pageDatas'=> TblPage::choose('news'), 'categories'=> TblCategory::getAll(), 'newsSide'=> TblNews::getAllTime()]);
+    }
+
+    public function newsByCategory($cat_slug)
+    {
+        return view('news', ['newses'=> TblNews::getByCat($cat_slug), 'pageDatas'=> TblPage::choose('news'), 'categories'=> TblCategory::getAll(), 'newsSide'=> TblNews::getAllTime()]);
+    }
+
+    // --------------------others functions-----------------------------------
+
+
+
+    public function faq()
+    {
+        return view('faq', ['pageDatas'=> TblPage::choose('faq'), 'faq'=> TblFaq::getAll()]);
+    }
+
+
+    public function contact()
+    {
+        return view('contact', ['pageDatas'=> TblPage::choose('contact'), 'contact'=> TblSettingContact::getAll()]);
+    }
+
 
     //Customer's function
     public function customerDashboard()
