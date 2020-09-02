@@ -50,4 +50,39 @@ class TblNews extends Model
 		'meta_title',
 		'meta_description'
 	];
+
+	public function categories(){
+		return $this->belongsTo('App\Models\TblCategory', 'category_id', 'category_id');
+		// return $this->hasMany('App\Models\TblCategory', 'category_id', 'category_id');
+
+	}
+
+	public static function getAllTime(){
+		return TblNews::all()->sortByDesc('news_order');	
+	}
+
+	public static function getAllTimePaginate(){
+		return TblNews::paginate(5);	
+	}
+
+	public static function choose($request){
+		return TblNews::find($request->id);
+	 }
+
+	public static function getByCat($cat_slug){
+		$category = TblCategory::where('category_slug', $cat_slug)->first();
+		$cat_id = $category->category_id;
+		$result = TblNews::where('category_id', $cat_id);
+		dd($result);
+		return $result;
+	} 
+
+	public static function getBySearch($request){
+		return TblNews::where('meta_description','LIKE', '%'.$request->search_string.'%')->paginate(5);
+	}
+
+	public static function searchTitle($request){
+		// Return Title print in the band (search by: reserch)
+		return $searchTitle = "Search by : $request->search_string";
+	}
 }

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TblCategory;
 use App\Models\TblPage;
 use App\Models\TblSettingHome;
 use Illuminate\Http\Request;
 use App\Models\TblDoctor;
+use App\Models\TblNews;
 use App\Models\TblProduct;
 use App\Models\TblVideo;
 use App\Models\TblPhoto;
@@ -53,10 +55,24 @@ class HomeController extends Controller
         return view('products', ['pageDatas'=> TblPage::choose('products'), 'products'=> TblProduct::getAll()]);
     }
 
+// --------------------news functions-----------------------------------
+
     public function news()
     {
-        return view('news', ['pageDatas'=> TblPage::choose('news')]);
+        return view('news', ['newses'=> TblNews::getAllTimePaginate(), 'pageDatas'=> TblPage::choose('news'), 'categories'=> TblCategory::getAll(), 'newsSide'=> TblNews::getAllTime()]);
     }
+
+    public function searchArtcl(Request $request)
+    {
+        return view('news', ['searchTitle'=> TblNews::searchTitle($request), 'newses'=> TblNews::getBySearch($request), 'pageDatas'=> TblPage::choose('news'), 'categories'=> TblCategory::getAll(), 'newsSide'=> TblNews::getAllTime()]);
+    }
+
+    public function newsByCategory($cat_slug)
+    {
+        return view('news', ['newses'=> TblNews::getByCat($cat_slug), 'pageDatas'=> TblPage::choose('news'), 'categories'=> TblCategory::getAll(), 'newsSide'=> TblNews::getAllTime()]);
+    }
+
+// --------------------others functions-----------------------------------
 
     public function photoGallery()
     {
