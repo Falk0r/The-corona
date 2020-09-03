@@ -19,7 +19,6 @@ Route::get('/', 'NavController@index')->name('home');
 Route::get('/about', 'NavController@about')->name('about');
 Route::get('/preventions', 'NavController@preventions')->name('preventions');
 Route::get('/products', 'NavController@products')->name('products');
-Route::get('/news', 'NavController@news')->name('news');
 Route::get('/contact', 'NavController@contact')->name('contact');
 
 
@@ -33,8 +32,11 @@ Route::get('/what-we-do', 'NavController@whatWeDo')->name('what-we-do');
 Route::get('/privacy-policy', 'NavController@privacyPolicy')->name('privacy-policy');
 Route::get('/terms-and-conditions', 'NavController@termsAndConditions')->name('terms-and-conditions');
 
-Route::post('/search', 'NavController@searchArtcl')->name('search');
+//----News Routes--------------------------------------------------------------------
+Route::get('/news', 'NavController@news')->name('news');
 Route::get('/category/{cat_slug}', 'NavController@newsByCategory')->name('category');
+Route::get('/article/{news_slug}', 'NavController@newsByOne')->name('article');
+Route::post('/search', 'NavController@searchArtcl')->name('search');
 
 Auth::routes();
 
