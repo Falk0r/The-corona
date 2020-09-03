@@ -41,4 +41,11 @@ class TblComment extends Model
 		'news_id',
 		'comment_status'
 	];
+
+	public static function getCommentsByArticle($news_slug){
+		$article = TblNews::where('news_slug', $news_slug)->first();
+		$news_id = $article->news_id;
+		$result = TblComment::where('news_id', $news_id)->get();
+		return $result;
+	} 
 }

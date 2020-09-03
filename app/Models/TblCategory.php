@@ -55,6 +55,12 @@ class TblCategory extends Model
 		return $result;
 	} 
 
+	public static function getCatName($cat_slug){
+		$category = TblCategory::where('category_slug', $cat_slug)->first();
+		$result = $category->category_name;
+		return $result;
+	}
+
 	public static function choose($request){
 		return TblCategory::find($request->id);
 	}

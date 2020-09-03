@@ -14,6 +14,7 @@ use App\Models\TblPhoto;
 use App\Models\TblSettingContact;
 use App\Models\TblPrevention;
 use App\Models\TblFaq;
+use App\Models\TblComment;
 
 
 class NavController extends Controller
@@ -105,12 +106,12 @@ class NavController extends Controller
 
     public function newsByCategory($cat_slug)
     {
-        return view('news', ['newses'=> TblNews::getByCat($cat_slug), 'pageDatas'=> TblPage::choose('news'), 'categories'=> TblCategory::getAll(), 'newsSide'=> TblNews::getAllTime()]);
+        return view('cat-news', ['newses'=> TblNews::getByCat($cat_slug), 'catName'=> TblCategory::getCatName($cat_slug), 'pageDatas'=> TblPage::choose('news'), 'categories'=> TblCategory::getAll(), 'newsSide'=> TblNews::getAllTime()]);
     }
 
     public function newsByOne($news_slug)
     {
-        return view('one-news', ['news'=> TblNews::getByOne($news_slug), 'pageDatas'=> TblPage::choose('news'), 'categories'=> TblCategory::getAll(), 'newsSide'=> TblNews::getAllTime()]);
+        return view('one-news', ['news'=> TblNews::getByOne($news_slug), 'pageDatas'=> TblPage::choose('news'), 'categories'=> TblCategory::getAll(), 'newsSide'=> TblNews::getAllTime(), 'comments'=> TblComment::getCommentsByArticle($news_slug)]);
     }
 
     // --------------------others functions-----------------------------------

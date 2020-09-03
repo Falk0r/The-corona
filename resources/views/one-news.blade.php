@@ -1,5 +1,3 @@
-{{dd(news)}}
-
 @extends('layouts.app')
 
 @section('content')
@@ -8,15 +6,12 @@
     <div class="page-banner" style="background-image: url(/uploads/{{ $pageDatas->banner }})">
         <div class="bg-page"></div>
         <div class="text">
-            @if (isset($searchTitle))
-                <h1>{{$searchTitle}}</h1>
-            @else
-            <h1>{{$urlRelatif = Route::getCurrentRoute()->uri()}}</h1>
-            @endif
+            <h1>{{ $news->news_title }}</h1>
             <nav aria-label="breadcrumb">
                   <ol class="breadcrumb justify-content-center">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{$urlRelatif = Route::getCurrentRoute()->uri()}}</li>
+                    <li class="breadcrumb-item"><a href="/news">News</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $news->news_title }}</li>
                   </ol>
             </nav>
         </div>
@@ -32,25 +27,25 @@
                         </div>
                         <div class="text">
                             <h2>{{$news->news_title}}</h2>
-                            <h3>Posted on: Apr 03, 2020{{$news->news_date}}</h3>
-                            {!!$news->news_content_short!!}
+                            <h3>Posted on: {{ Carbon\Carbon::createFromDate($news->news_date)->toFormattedDateString() }}</h3>
+                            {!!$news->news_content!!}
                         </div>
 					<hr class="mt_50">
 					<div class="comment mt_50">						
-						<h2 class="mb_40">Comments (2)</h2>
-                        @foreach ($comments as $comment)
+						<h2 class="mb_40">Comments ({{$comments->count()}})</h2>
+                        @foreach ($comments as $key=>$comment)
 						<div class="comment-item">
 							<div class="text">
-                                <h4>1. Patrick Henderson</h4>
-                                <div class="date">Apr 04, 2020 at 08:32:17 am</div>
+                                <h4>{{$key+1}}. {{$comment->person_name}}</h4>
+                                <div class="date">{{ Carbon\Carbon::createFromDate($comment->comment_date)->toFormattedDateString() }} at {{$comment->comment_time}}</div>
                                 <div class="des">
-                                    <p>This is a nice website. I love this website very much. I will recommend all the people about this website.											</p>
+                                    <p>{{$comment->person_message}}	</p>
                                 </div>
 							</div>
 						</div>
                         @endforeach
 						<hr class="mt_50">
-						<h2 class="mt_35">Post Your Comment</h2>						
+						<h2 class="mt_35">Post Your Comment</h2>
 						<form action="" method="post">
                             @csrf
 							<div class="row mb_20">
@@ -72,7 +67,6 @@
 								</div>
 							</div>
 						</form>                           
-
 					</div>
 				</div>
 			</div>
