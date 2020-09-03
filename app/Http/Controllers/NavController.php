@@ -108,6 +108,11 @@ class NavController extends Controller
         return view('news', ['newses'=> TblNews::getByCat($cat_slug), 'pageDatas'=> TblPage::choose('news'), 'categories'=> TblCategory::getAll(), 'newsSide'=> TblNews::getAllTime()]);
     }
 
+    public function newsByOne($news_slug)
+    {
+        return view('one-news', ['news'=> TblNews::getByOne($news_slug), 'pageDatas'=> TblPage::choose('news'), 'categories'=> TblCategory::getAll(), 'newsSide'=> TblNews::getAllTime()]);
+    }
+
     // --------------------others functions-----------------------------------
 
 

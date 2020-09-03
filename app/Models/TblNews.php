@@ -65,6 +65,11 @@ class TblNews extends Model
 		return TblNews::paginate(5);	
 	}
 
+	public static function($news_slug){
+		$result = TblNews::where('news_slug', $news_slug)->first();
+		dd($news_slug);
+	}
+
 	public static function choose($request){
 		return TblNews::find($request->id);
 	 }

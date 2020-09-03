@@ -1,3 +1,5 @@
+{{dd(news)}}
+
 @extends('layouts.app')
 
 @section('content')
@@ -24,34 +26,56 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="single-section">
-                        @foreach ($newses as $news)
-                        <div class="blog-item">
-                            <div class="featured-photo">
-                                <a href="../news/{{$news->news_slug}}"><img src="../uploads/{{$news->photo}}"></a>
-                            </div>
-                            <div class="text">
-                                <h2><a href="../news/{{$news->news_slug}}">{{$news->news_title}}</a></h2>
-                                <p>{{$news->news_content_short}}</p>
-                                <div class="read-more"><a href="../news/{{$news->news_slug}}">Read More</a></div>
-                            </div>
+				    <div class="single-section">
+                        <div class="featured-photo">
+                            <img src="/uploads/{{$news->photo}}">
                         </div>
+                        <div class="text">
+                            <h2>{{$news->news_title}}</h2>
+                            <h3>Posted on: Apr 03, 2020{{$news->news_date}}</h3>
+                            {!!$news->news_content_short!!}
+                        </div>
+					<hr class="mt_50">
+					<div class="comment mt_50">						
+						<h2 class="mb_40">Comments (2)</h2>
+                        @foreach ($comments as $comment)
+						<div class="comment-item">
+							<div class="text">
+                                <h4>1. Patrick Henderson</h4>
+                                <div class="date">Apr 04, 2020 at 08:32:17 am</div>
+                                <div class="des">
+                                    <p>This is a nice website. I love this website very much. I will recommend all the people about this website.											</p>
+                                </div>
+							</div>
+						</div>
                         @endforeach
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <nav class="mt_20">
-                                <ul class="pagination">
-                                    {{-- <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                                    <li class="page-item"><a class="page-link" href="news%26p%3d1.html">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="news%26p%3d2.html">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="news%26p%3d2.html">Next</a></li> --}}
-                                    {{ $newses->links() }}                                  
-                                </ul>
-                            </nav>
-                        </div>	
-                    </div>
-                </div>
+						<hr class="mt_50">
+						<h2 class="mt_35">Post Your Comment</h2>						
+						<form action="" method="post">
+                            @csrf
+							<div class="row mb_20">
+								<div class="col">
+									<input type="text" class="form-control" placeholder="Name" name="person_name">
+								</div>
+								<div class="col">
+									<input type="email" class="form-control" placeholder="Email Address" name="person_email">
+								</div>
+							</div>
+							<div class="row mb_20">
+								<div class="col">
+									<textarea name="person_message" class="form-control h-200" cols="30" rows="10" placeholder="Comment"></textarea>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<button type="submit" class="btn btn-primary" name="form_comment">Post Comment</button>
+								</div>
+							</div>
+						</form>                           
+
+					</div>
+				</div>
+			</div>
                 {{-- ---------------------aside------------------------------	 --}}
                 <div class="col-md-4">
                     <div class="sidebar">
