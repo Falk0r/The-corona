@@ -3,7 +3,7 @@
     <!-- Menu For Mobile Device -->
     <div class="mobile-nav">
         <a href="/" class="logo">
-            <img src="uploads/logo.png" alt="">
+            <img src="/uploads/logo.png" alt="">
         </a>
     </div>
 
@@ -12,7 +12,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand" href="/">
-                    <img src="uploads/logo.png" alt="logo">
+                    <img src="/uploads/logo.png" alt="logo">
                 </a>
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent" style="display: block;">
                     <ul class="navbar-nav ml-auto">

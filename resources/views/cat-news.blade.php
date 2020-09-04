@@ -49,7 +49,7 @@
                 <div class="col-md-4">
                     <div class="sidebar">
                         <div class="widget">
-                            <form action="search" method="post">
+                            <form action="/search" method="post">
                                 @csrf
                                 <div class="search input-group md-form form-sm form-2 pl-0">
                                     <input name="search_string" class="form-control my-0 py-1 red-border" type="text" placeholder="Search News ...">
