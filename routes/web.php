@@ -79,7 +79,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
 
     });
 
-    Route::get('/dashboard','HomeController@index')->name('home');
+    Route::get('/index','HomeController@index')->name('home');
 
     //Put all of your admin routes here...
 

@@ -1,5 +1,7 @@
 <?php
 
+//https://medium.com/@sagarmaheshwary31/laravel-multiple-guards-authentication-setup-and-login-2761564da986
+
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
