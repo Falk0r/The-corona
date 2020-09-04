@@ -61,6 +61,9 @@
 									<textarea name="person_message" class="form-control h-200" cols="30" rows="10" placeholder="Comment"></textarea>
 								</div>
 							</div>
+                            {{-- ajouter hide input news_id --}}
+                            <input type="hidden" name="news_id" value="{{ $news->news_id  }}"/>
+                            {{-----------------------------------------------}}
 							<div class="row">
 								<div class="col">
 									<button type="submit" class="btn btn-primary" name="form_comment">Post Comment</button>

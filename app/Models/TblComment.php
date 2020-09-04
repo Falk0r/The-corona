@@ -7,6 +7,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 /**
  * Class TblComment
@@ -54,7 +55,10 @@ class TblComment extends Model
 		$comment->person_name = $request->person_name;
 		$comment->person_email = $request->person_email;
 		$comment->person_message = $request->person_message;
-		dd($comment);
+		$comment->comment_date = Carbon::now()->format('Y-m-d');
+		$comment->comment_time = Carbon::now()->format('H:i:s A');
+		$comment->news_id = $request->news_id;
+		$comment->comment_status = true;
 		$comment->save();
 		return;
 	}
