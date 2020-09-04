@@ -46,7 +46,7 @@
                         @endforeach
 						<hr class="mt_50">
 						<h2 class="mt_35">Post Your Comment</h2>
-						<form action="" method="post">
+						<form action="/send-comment" method="post">
                             @csrf
 							<div class="row mb_20">
 								<div class="col">

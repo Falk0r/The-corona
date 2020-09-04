@@ -47,5 +47,16 @@ class TblComment extends Model
 		$news_id = $article->news_id;
 		$result = TblComment::where('news_id', $news_id)->get();
 		return $result;
-	} 
+	}
+
+	public static function addComment($request){
+		$comment = new TblComment;
+		$comment->person_name = $request->person_name;
+		$comment->person_email = $request->person_email;
+		$comment->person_message = $request->person_message;
+		dd($comment);
+		$comment->save();
+		return;
+	}
+
 }
