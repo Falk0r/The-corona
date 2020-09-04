@@ -6,23 +6,14 @@
     <div class="page-banner" style="background-image: url(/uploads/{{ $pageDatas->banner }})">
         <div class="bg-page"></div>
         <div class="text">
-            @if (isset($searchTitle))
-                <h1>{{$searchTitle}}</h1>
-                <nav aria-label="breadcrumb">
+            <h1>{{ $catName }}</h1>
+            <nav aria-label="breadcrumb">
                   <ol class="breadcrumb justify-content-center">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Search</li>
+                    <li class="breadcrumb-item">Category</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $catName }}</li>
                   </ol>
-                </nav>
-            @else
-                <h1>{{ $pageDatas->page_name }}</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{{ $pageDatas->page_name }}</li>
-                    </ol>
-                </nav>
-            @endif
+            </nav>
         </div>
     </div>
     @endif

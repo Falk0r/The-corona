@@ -21,7 +21,7 @@
 
 
     <!-- Favicon -->
-    <link href="uploads/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="/uploads/favicon.png" rel="shortcut icon" type="image/png">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

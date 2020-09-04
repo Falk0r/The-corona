@@ -35,8 +35,10 @@ Route::get('/terms-and-conditions', 'NavController@termsAndConditions')->name('t
 //----News Routes--------------------------------------------------------------------
 Route::get('/news', 'NavController@news')->name('news');
 Route::get('/category/{cat_slug}', 'NavController@newsByCategory')->name('category');
-Route::get('/article/{news_slug}', 'NavController@newsByOne')->name('article');
+Route::get('/news/{news_slug}', 'NavController@newsByOne')->name('article');
 Route::post('/search', 'NavController@searchArtcl')->name('search');
+
+Route::post('/send-comment', 'DbController@addComment')->name('comment');
 
 Auth::routes();
 
