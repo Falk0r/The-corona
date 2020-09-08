@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="section">
     @if (isset($pageDatas))
     <div class="page-banner" style="background-image: url(/uploads/{{ $pageDatas->banner }})">
