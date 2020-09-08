@@ -21,7 +21,7 @@
 
 
     <!-- Favicon -->
-    <link href="uploads/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="/uploads/favicon.png" rel="shortcut icon" type="image/png">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -47,7 +47,7 @@
 
     <!-- Styles -->
 
-    <link rel="stylesheet" href="/css/font-awesome.min.css">  
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
     {{-- <link rel="stylesheet" href="/css/app.css">   --}}
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css" /> --}}
 

@@ -1,5 +1,3 @@
-{{dd(news)}}
-
 @extends('layouts.app')
 
 @section('content')
@@ -36,7 +34,7 @@
                             {!!$news->news_content_short!!}
                         </div>
 					<hr class="mt_50">
-					<div class="comment mt_50">						
+					<div class="comment mt_50">
 						<h2 class="mb_40">Comments (2)</h2>
                         @foreach ($comments as $comment)
 						<div class="comment-item">
@@ -50,7 +48,7 @@
 						</div>
                         @endforeach
 						<hr class="mt_50">
-						<h2 class="mt_35">Post Your Comment</h2>						
+						<h2 class="mt_35">Post Your Comment</h2>
 						<form action="" method="post">
                             @csrf
 							<div class="row mb_20">
@@ -71,7 +69,7 @@
 									<button type="submit" class="btn btn-primary" name="form_comment">Post Comment</button>
 								</div>
 							</div>
-						</form>                           
+						</form>
 
 					</div>
 				</div>

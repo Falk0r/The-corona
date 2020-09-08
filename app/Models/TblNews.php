@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class TblNews
- * 
+ *
  * @property int $news_id
  * @property string $news_title
  * @property string $news_slug
@@ -58,16 +58,15 @@ class TblNews extends Model
 	}
 
 	public static function getAllTime(){
-		return TblNews::all()->sortByDesc('news_order');	
+		return TblNews::all()->sortByDesc('news_order');
 	}
 
 	public static function getAllTimePaginate(){
-		return TblNews::paginate(5);	
+		return TblNews::paginate(5);
 	}
 
-	public static function($news_slug){
+	public static function getByOne($news_slug){
 		$result = TblNews::where('news_slug', $news_slug)->first();
-		dd($news_slug);
 	}
 
 	public static function choose($request){
@@ -78,9 +77,8 @@ class TblNews extends Model
 		$category = TblCategory::where('category_slug', $cat_slug)->first();
 		$cat_id = $category->category_id;
 		$result = TblNews::where('category_id', $cat_id);
-		dd($result);
 		return $result;
-	} 
+	}
 
 	public static function getBySearch($request){
 		return TblNews::where('meta_description','LIKE', '%'.$request->search_string.'%')->paginate(5);

@@ -28,7 +28,6 @@ Route::get('/faq', 'NavController@faq')->name('faq');
 Route::get('/doctors', 'NavController@doctors')->name('doctors');
 Route::get('/who-we-are', 'NavController@whoWeAre')->name('who-we-are');
 Route::get('/what-we-do', 'NavController@whatWeDo')->name('what-we-do');
-
 Route::get('/privacy-policy', 'NavController@privacyPolicy')->name('privacy-policy');
 Route::get('/terms-and-conditions', 'NavController@termsAndConditions')->name('terms-and-conditions');
 
@@ -47,3 +46,6 @@ Route::get('/customer-order', 'NavController@customerOrder')->middleware('auth')
 Route::get('/customer-delivery-track', 'NavController@customerDeliveryTrack')->middleware('auth')->name('Delivery Track');
 Route::get('/customer-edit-profile', 'NavController@customerEditProfile')->middleware('auth')->name('Edit Profile');
 Route::get('/customer-edit-password', 'NavController@customerEditPassword')->middleware('auth')->name('Edit Password');
+
+
+Route::get('/preventionsdetail/{preventions_slug}', 'NavController@preventionsDetail')->name('preventionsdetail');

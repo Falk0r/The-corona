@@ -48,4 +48,14 @@ class TblPrevention extends Model
 	public static function getAll(){
 		return TblPrevention::all();
 	}
+
+	public static function choose($request){
+		return TblPrevention::find($request->id);
+	}
+
+	public static function getBySlug($preventions_slug){
+		$result = TblPrevention::where('slug', $preventions_slug)->first();
+		return $result;
+	}
+
 }

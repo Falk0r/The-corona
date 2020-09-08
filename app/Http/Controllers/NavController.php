@@ -80,11 +80,6 @@ class NavController extends Controller
         return view('terms-and-conditions', ['pageDatas'=> TblPage::choose('terms-and-conditions')]);
     }
 
-    public function preventions()
-    {
-        return view('preventions', ['pageDatas'=> TblPage::choose('preventions'), 'preventions'=> TblPrevention::getAll()]);
-    }
-
     public function products()
     {
         return view('products', ['pageDatas'=> TblPage::choose('products'), 'products'=> TblProduct::getAll()]);
@@ -149,6 +144,18 @@ class NavController extends Controller
     public function customerEditPassword()
     {
         return view('customers.customer-edit-password', ['homeDatas'=> TblSettingHome::giveData()]);
+    }
+
+    // --------------------preventions functions-----------------------------------
+
+    public function preventions()
+    {
+        return view('preventions', ['pageDatas'=> TblPage::choose('preventions'), 'preventions'=> TblPrevention::getAll()]);
+    }
+
+    public function preventionsDetail($preventions_slug)
+    {
+        return view('preventionsdetail', ['pageDatas'=> TblPage::choose('preventions'), 'prevention'=> TblPrevention::getBySlug($preventions_slug), 'preventions'=> TblPrevention::getAll()]);
     }
 
 }
