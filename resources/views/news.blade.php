@@ -8,15 +8,21 @@
         <div class="text">
             @if (isset($searchTitle))
                 <h1>{{$searchTitle}}</h1>
-            @else
-            <h1>{{$urlRelatif = Route::getCurrentRoute()->uri()}}</h1>
-            @endif
-            <nav aria-label="breadcrumb">
+                <nav aria-label="breadcrumb">
                   <ol class="breadcrumb justify-content-center">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{$urlRelatif = Route::getCurrentRoute()->uri()}}</li>
+                    <li class="breadcrumb-item active" aria-current="page">Search</li>
                   </ol>
-            </nav>
+                </nav>
+            @else
+                <h1>{{ $pageDatas->page_name }}</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ $pageDatas->page_name }}</li>
+                    </ol>
+                </nav>
+            @endif
         </div>
     </div>
     @endif
@@ -42,10 +48,6 @@
                         <div class="col-md-12">
                             <nav class="mt_20">
                                 <ul class="pagination">
-                                    {{-- <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                                    <li class="page-item"><a class="page-link" href="news%26p%3d1.html">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="news%26p%3d2.html">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="news%26p%3d2.html">Next</a></li> --}}
                                     {{ $newses->links() }}                                  
                                 </ul>
                             </nav>
@@ -56,7 +58,7 @@
                 <div class="col-md-4">
                     <div class="sidebar">
                         <div class="widget">
-                            <form action="search" method="post">
+                            <form action="/search" method="post">
                                 @csrf
                                 <div class="search input-group md-form form-sm form-2 pl-0">
                                     <input name="search_string" class="form-control my-0 py-1 red-border" type="text" placeholder="Search News ...">

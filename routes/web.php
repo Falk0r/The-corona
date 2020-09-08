@@ -34,8 +34,10 @@ Route::get('/terms-and-conditions', 'NavController@termsAndConditions')->name('t
 //----News Routes--------------------------------------------------------------------
 Route::get('/news', 'NavController@news')->name('news');
 Route::get('/category/{cat_slug}', 'NavController@newsByCategory')->name('category');
-Route::get('/article/{news_slug}', 'NavController@newsByOne')->name('article');
+Route::get('/news/{news_slug}', 'NavController@newsByOne')->name('article');
 Route::post('/search', 'NavController@searchArtcl')->name('search');
+
+Route::post('/send-comment', 'DbController@addComment')->name('comment');
 
 Auth::routes();
 
@@ -47,5 +49,48 @@ Route::get('/customer-delivery-track', 'NavController@customerDeliveryTrack')->m
 Route::get('/customer-edit-profile', 'NavController@customerEditProfile')->middleware('auth')->name('Edit Profile');
 Route::get('/customer-edit-password', 'NavController@customerEditPassword')->middleware('auth')->name('Edit Password');
 
+<<<<<<< HEAD
 
 Route::get('/preventionsdetail/{preventions_slug}', 'NavController@preventionsDetail')->name('preventionsdetail');
+=======
+/* ----------------------- Admin Routes START -------------------------------- */
+
+Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
+    
+    /**
+     * Admin Auth Route(s)
+     */
+    Route::namespace('Auth')->group(function(){
+        
+        //Login Routes
+        Route::get('/login','LoginController@showLoginForm')->name('login');
+        Route::post('/login','LoginController@login');
+        Route::post('/logout','LoginController@logout')->name('logout');
+
+        //Register Routes
+        // Route::get('/register','RegisterController@showRegistrationForm')->name('register');
+        // Route::post('/register','RegisterController@register');
+
+        //Forgot Password Routes
+        Route::get('/password/reset','ForgotPasswordController@showLinkRequestForm')->name('password.request');
+        Route::post('/password/email','ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+
+        //Reset Password Routes
+        Route::get('/password/reset/{token}','ResetPasswordController@showResetForm')->name('password.reset');
+        Route::post('/password/reset','ResetPasswordController@reset')->name('password.update');
+
+        // Email Verification Route(s)
+        Route::get('email/verify','VerificationController@show')->name('verification.notice');
+        Route::get('email/verify/{id}','VerificationController@verify')->name('verification.verify');
+        Route::get('email/resend','VerificationController@resend')->name('verification.resend');
+
+    });
+
+    Route::get('/index','HomeController@index')->name('home');
+
+    //Put all of your admin routes here...
+
+});
+
+/* ----------------------- Admin Routes END -------------------------------- */
+>>>>>>> c5aa1126d12edb1dc40fbdfddde42da58efa8656
