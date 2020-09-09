@@ -84,8 +84,16 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     });
 
     Route::get('/index','HomeController@index')->name('home');
+    Route::get('/slider', 'HomeController@slider')->name('slider');
+    Route::get('/slider-edit/{id}', 'HomeController@sliderEdit')->name('slider-edit');
+    Route::post('/slider-edit/{id}', 'HomeController@sliderEditOne');
+    Route::post('/slider-edit-photo', 'HomeController@sliderPhotoUpdate');
+    Route::get('/slider-delete/{id}', 'HomeController@sliderDelete')->name('slider-delete');
+    Route::get('/slider-add', 'HomeController@sliderAdd')->name('slider-add');
+    Route::post('/slider-add', 'HomeController@sliderAddOne');
 
     //Put all of your admin routes here...
+
 
 });
 
