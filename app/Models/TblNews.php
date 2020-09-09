@@ -66,11 +66,8 @@ class TblNews extends Model
 	}
 
 	public static function getByOne($news_slug){
-		$result = TblNews::where('news_slug', $news_slug)->first();
-<<<<<<< HEAD
-=======
-		return $result;
->>>>>>> c5aa1126d12edb1dc40fbdfddde42da58efa8656
+		return $result = TblNews::where('news_slug', $news_slug)->first();
+		
 	}
 
 	public static function choose($request){
@@ -80,11 +77,7 @@ class TblNews extends Model
 	public static function getByCat($cat_slug){
 		$category = TblCategory::where('category_slug', $cat_slug)->first();
 		$cat_id = $category->category_id;
-<<<<<<< HEAD
-		$result = TblNews::where('category_id', $cat_id);
-=======
 		$result = TblNews::where('category_id', $cat_id)->paginate(5);
->>>>>>> c5aa1126d12edb1dc40fbdfddde42da58efa8656
 		return $result;
 	}
 

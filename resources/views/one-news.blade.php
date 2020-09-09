@@ -31,15 +31,9 @@
                             {!!$news->news_content!!}
                         </div>
 					<hr class="mt_50">
-<<<<<<< HEAD
-					<div class="comment mt_50">
-						<h2 class="mb_40">Comments (2)</h2>
-                        @foreach ($comments as $comment)
-=======
 					<div class="comment mt_50">						
 						<h2 class="mb_40">Comments ({{$comments->count()}})</h2>
                         @foreach ($comments as $key=>$comment)
->>>>>>> c5aa1126d12edb1dc40fbdfddde42da58efa8656
 						<div class="comment-item">
 							<div class="text">
                                 <h4>{{$key+1}}. {{$comment->person_name}}</h4>
@@ -52,11 +46,7 @@
                         @endforeach
 						<hr class="mt_50">
 						<h2 class="mt_35">Post Your Comment</h2>
-<<<<<<< HEAD
-						<form action="" method="post">
-=======
 						<form action="/send-comment" method="post">
->>>>>>> c5aa1126d12edb1dc40fbdfddde42da58efa8656
                             @csrf
 							<div class="row mb_20">
 								<div class="col">
@@ -80,12 +70,7 @@
 									<button type="submit" class="btn btn-primary" name="form_comment">Post Comment</button>
 								</div>
 							</div>
-<<<<<<< HEAD
 						</form>
-
-=======
-						</form>                           
->>>>>>> c5aa1126d12edb1dc40fbdfddde42da58efa8656
 					</div>
 				</div>
 			</div>
