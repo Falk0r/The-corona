@@ -7,6 +7,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 /**
  * Class TblComment
@@ -49,12 +50,15 @@ class TblComment extends Model
 		return $result;
 	}
 
-	public static function addComment($request){
+	public static function addComment($validateCommentForm){
 		$comment = new TblComment;
-		$comment->person_name = $request->person_name;
-		$comment->person_email = $request->person_email;
-		$comment->person_message = $request->person_message;
-		dd($comment);
+		$comment->person_name = $validateCommentForm['person_name'];
+		$comment->person_email = $validateCommentForm['person_email'];
+		$comment->person_message = $validateCommentForm['person_message'];
+		$comment->comment_date = Carbon::now()->format('Y-m-d');
+		$comment->comment_time = Carbon::now()->format('H:i:s A');
+		$comment->news_id = $validateCommentForm['news_id'];
+		$comment->comment_status = "Approved";
 		$comment->save();
 		return;
 	}

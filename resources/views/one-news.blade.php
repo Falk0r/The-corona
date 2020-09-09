@@ -63,14 +63,18 @@
 									<input type="text" class="form-control" placeholder="Name" name="person_name">
 								</div>
 								<div class="col">
-									<input type="email" class="form-control" placeholder="Email Address" name="person_email">
+									<input type="email" class="form-control" placeholder="Email Address" name="person_email" data-error="Please enter a valid email.">
 								</div>
 							</div>
 							<div class="row mb_20">
 								<div class="col">
 									<textarea name="person_message" class="form-control h-200" cols="30" rows="10" placeholder="Comment"></textarea>
+                                    @if(session()->has('error'))<script>Swal.fire('Error','{{ session()->get('error') }}','error')</script>@endif
+                                    @if(session()->has('info'))<script>Swal.fire('Success','Comment is posted successfully. It will be live after admin approval.','success')</script>@endif
 								</div>
 							</div>
+                            <input type="hidden" name="news_id" value="{{ $news->news_id  }}"/>
+                            {{-----------------------------------------------}}
 							<div class="row">
 								<div class="col">
 									<button type="submit" class="btn btn-primary" name="form_comment">Post Comment</button>
