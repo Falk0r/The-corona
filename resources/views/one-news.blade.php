@@ -59,16 +59,8 @@
 							<div class="row mb_20">
 								<div class="col">
 									<textarea name="person_message" class="form-control h-200" cols="30" rows="10" placeholder="Comment"></textarea>
-                                    @if(session()->has('error'))
-                                        <div class="alert alert-danger">
-                                            {{ session()->get('error') }}
-                                        </div>
-                                    @endif
-                                    @if(session()->has('info'))
-                                        <div class="alert alert-success">
-                                            {{ session()->get('info') }}
-                                        </div>
-                                    @endif
+                                    @if(session()->has('error'))<script>Swal.fire('Error','{{ session()->get('error') }}','error')</script>@endif
+                                    @if(session()->has('info'))<script>Swal.fire('Success','Comment is posted successfully. It will be live after admin approval.','success')</script>@endif
 								</div>
 							</div>
                             <input type="hidden" name="news_id" value="{{ $news->news_id  }}"/>
