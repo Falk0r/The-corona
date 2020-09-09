@@ -1,20 +1,19 @@
 <div class="sidebar-menu do-not-print">
     <div class="sidebar-header">
         <div class="logo">
-            <a href="index.php"><img src="../uploads/logo_admin.png" alt="logo"></a>
+            <a href="/index="><img src="{{ asset('uploads/logo_admin.png')}}" alt="logo"></a>
         </div>
     </div>
     <div class="main-menu">
-        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 857px;"><div class="menu-inner" style="overflow: hidden; width: auto; height: 857px;">
+        <div class="menu-inner">
             <nav>
                 <ul class="metismenu" id="menu">
                     
                     <li class="active">
-                        <a href="index.php">
+                        <a href="/admin/index">
                             <i class="ti-dashboard"></i><span>Dashboard</span>
                         </a>
                     </li>
-
                     <li class="">
                         <a href="javascript:void(0)" aria-expanded="true"><i class="ti-settings"></i><span>Website Settings</span></a>
                         <ul class="collapse">
@@ -74,9 +73,6 @@
                             <li class="">
                                 <a href="footer-page.php">Footer (Pages)</a>
                             </li>
-
-                            
-
                         </ul>
                     </li>
 
@@ -93,7 +89,7 @@
                     </li>
 
                     <li class="">
-                        <a href="slider.php">
+                        <a href="{{ route('admin.slider') }}">
                             <i class="ti-layout-slider"></i><span>Slider</span>
                         </a>
                     </li>
@@ -231,6 +227,6 @@
 
                 </ul>
             </nav>
-        </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 830.825px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+        </div>
     </div>
 </div>
