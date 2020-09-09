@@ -13,6 +13,9 @@ class DbController extends Controller
         if (!isset($request->person_name)){
             return back()->with('error', 'Note ton nom bouffon.');
         };
+        if (!isset($request->person_email)){
+            return back()->with('error', 'PPffff!!! Tu as oublié de mettre ton mail...');
+        };
         if (!isset($request->person_message)){
             return back()->with('error', 'Putain mais t\'es trop con mets un message bordel!!!.');
         };

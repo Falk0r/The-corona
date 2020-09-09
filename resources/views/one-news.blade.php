@@ -53,7 +53,7 @@
 									<input type="text" class="form-control" placeholder="Name" name="person_name">
 								</div>
 								<div class="col">
-									<input type="email" class="form-control" placeholder="Email Address" name="person_email" required="required" data-error="Please enter a valid email.">
+									<input type="email" class="form-control" placeholder="Email Address" name="person_email" data-error="Please enter a valid email.">
 								</div>
 							</div>
 							<div class="row mb_20">
