@@ -28,7 +28,6 @@ Route::get('/faq', 'NavController@faq')->name('faq');
 Route::get('/doctors', 'NavController@doctors')->name('doctors');
 Route::get('/who-we-are', 'NavController@whoWeAre')->name('who-we-are');
 Route::get('/what-we-do', 'NavController@whatWeDo')->name('what-we-do');
-
 Route::get('/privacy-policy', 'NavController@privacyPolicy')->name('privacy-policy');
 Route::get('/terms-and-conditions', 'NavController@termsAndConditions')->name('terms-and-conditions');
 
@@ -50,15 +49,18 @@ Route::get('/customer-delivery-track', 'NavController@customerDeliveryTrack')->m
 Route::get('/customer-edit-profile', 'NavController@customerEditProfile')->middleware('auth')->name('Edit Profile');
 Route::get('/customer-edit-password', 'NavController@customerEditPassword')->middleware('auth')->name('Edit Password');
 
+
+Route::get('/preventionsdetail/{preventions_slug}', 'NavController@preventionsDetail')->name('preventionsdetail');
+
 /* ----------------------- Admin Routes START -------------------------------- */
 
 Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
-    
+
     /**
      * Admin Auth Route(s)
      */
     Route::namespace('Auth')->group(function(){
-        
+
         //Login Routes
         Route::get('/login','LoginController@showLoginForm')->name('login');
         Route::post('/login','LoginController@login');
@@ -85,7 +87,6 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
 
     Route::get('/index','HomeController@index')->name('home');
 
-    //Put all of your admin routes here...
 
 });
 

@@ -23,13 +23,13 @@
 					<div class="col-lg-4 col-md-6 col-sm-12">
 						<div class="service-item wow fadeInUp mb_30" style="visibility: visible; animation-name: fadeInUp;">
 							<div class="photo">
-								<a href=""><img src="/uploads/{{$prevention->photo}}" alt=""></a>
+								<a href="/preventionsdetail/{{$prevention->slug}}"><img src="/uploads/{{$prevention->photo}}" alt=""></a>
 							</div>
 							<div class="text">
-								<h3><a href="">{{$prevention->name}}</a></h3>
+								<h3><a href="/preventionsdetail/{{$prevention->slug}}">{{$prevention->name}}</a></h3>
 								{{$prevention->short_description}}
 								<div class="read-more">
-									<a href="/prevention/wash-hands-regularly">Read More</a>
+									<a href="/preventionsdetail/{{$prevention->slug}}">Read More</a>
 								</div>
 							</div>
 						</div>
