@@ -49,19 +49,18 @@ Route::get('/customer-delivery-track', 'NavController@customerDeliveryTrack')->m
 Route::get('/customer-edit-profile', 'NavController@customerEditProfile')->middleware('auth')->name('Edit Profile');
 Route::get('/customer-edit-password', 'NavController@customerEditPassword')->middleware('auth')->name('Edit Password');
 
-<<<<<<< HEAD
 
 Route::get('/preventionsdetail/{preventions_slug}', 'NavController@preventionsDetail')->name('preventionsdetail');
-=======
+
 /* ----------------------- Admin Routes START -------------------------------- */
 
 Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
-    
+
     /**
      * Admin Auth Route(s)
      */
     Route::namespace('Auth')->group(function(){
-        
+
         //Login Routes
         Route::get('/login','LoginController@showLoginForm')->name('login');
         Route::post('/login','LoginController@login');
@@ -88,9 +87,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
 
     Route::get('/index','HomeController@index')->name('home');
 
-    //Put all of your admin routes here...
 
 });
 
 /* ----------------------- Admin Routes END -------------------------------- */
->>>>>>> c5aa1126d12edb1dc40fbdfddde42da58efa8656
