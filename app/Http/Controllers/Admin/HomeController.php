@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Models\TblSlider;
+use App\Models\TblPrevention;
 
 class HomeController extends Controller
 {
@@ -75,8 +76,59 @@ class HomeController extends Controller
     {
         TblSlider::addOne($request);
         return redirect('admin/slider');
-        
     }
 
     // <-- End Slider -->
+
+    // <-- Start Preventions -->
+    public function preventions()
+    {
+        return view('admin.preventions', ['name' => 'Preventions', 'button' => 'Add Preventions', 'link' => 'admin.preventions-add' ,'preventions' => TblPrevention::getAll()]);
+    }
+    public function preventionsEdit($id)
+    {        
+        return view('admin.preventions-edit', ['name' => 'Preventions', 'button' => 'View Preventions', 'link' => 'admin.preventions','prevention' => tblPrevention::find($id)]);
+    }
+    public function preventionsEditOne(Request $request)
+    {
+        TblPrevention::updateOne($request);
+        return redirect('admin/preventions');
+    }
+    public function preventionsPhotoUpdate(Request $request)
+    {
+        $name = $request->photo->getClientOriginalName();
+        $path = $request->photo->move('uploads', $name);
+
+        $prevention = TblPrevention::find($request->id);
+		$prevention->name = $request->name;
+		$prevention->slug = $request->slug;
+		$prevention->description = $request->description;
+		$prevention->short_description = $request->short_description;
+		$prevention->prevention_order = $request->prevention_order;
+		$prevention->meta_title = $request->meta_title;
+		$prevention->meta_description = $request->meta_description;
+		$prevention->prevention_order = $request->prevention_order;
+		$prevention->status = $request->status;
+        $prevention->photo = $name;
+		$prevention->save();
+
+        return redirect('admin/preventions');
+    }
+    public function preventionsDelete($id)
+    {
+        TblPrevention::deletePrevention($id);
+        return redirect('admin/preventions');
+    }
+    public function preventionsAdd()
+    {
+        return view('admin.preventions-add', ['name' => 'Add Prevention', 'button' => 'View Preventions', 'link' => 'admin.preventions']);
+    }
+    public function preventionsAddOne(Request $request)
+    {
+        TblPrevention::addOne($request);
+        return redirect('admin/preventions');
+    }
+
+
+    // <-- End Preventions -->
 }
