@@ -26,4 +26,8 @@ class TblSettingLogo extends Model
 		'logo',
 		'logo_admin'
 	];
+
+	public static function getAll(){
+		return TblSettingLogo::all();
+	}
 }

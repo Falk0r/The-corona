@@ -19,7 +19,7 @@
                         <ul class="collapse">
                             
                             <li class="">
-                                <a href="setting-logo.php">Logo</a>
+                                <a href="{{ route('admin.setting-logo') }}">Logo</a>
                             </li>
 
                             <li class="">
