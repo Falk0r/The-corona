@@ -57,5 +57,42 @@ class TblPrevention extends Model
 		$result = TblPrevention::where('slug', $preventions_slug)->first();
 		return $result;
 	}
+	public static function updateOne($request)
+	{
+		$prevention = TblPrevention::find($request->id);
+		$prevention->name = $request->name;
+		$prevention->slug = $request->slug;
+		$prevention->description = $request->description;
+		$prevention->short_description = $request->short_description;
+		$prevention->prevention_order = $request->prevention_order;
+		$prevention->meta_title = $request->meta_title;
+		$prevention->meta_description = $request->meta_description;
+		$prevention->prevention_order = $request->prevention_order;
+		$prevention->status = $request->status;
+		$prevention->save();
+		return;
+	}
+	public static function deletePrevention($id)
+	{
+		return TblPrevention::destroy($id);
+	}
+	public static function addOne($request)
+	{
+		//Upload file
+		$name = $request->photo->getClientOriginalName();
+        $path = $request->photo->move('uploads', $name);
+
+		$prevention = new Tblprevention;
+		$prevention->name = $request->name;
+		$prevention->slug = $request->slug;
+		$prevention->short_description = $request->short_description;
+		$prevention->description = $request->description;
+		$prevention->meta_title = $request->meta_title;
+		$prevention->meta_description = $request->meta_description;
+		$prevention->prevention_order = $request->prevention_order;
+		$prevention->status = $request->status;
+		$prevention->photo = $name;
+		$prevention->save();
+	}
 
 }

@@ -190,7 +190,7 @@
                     </li>
 
                     <li class="">
-                        <a href="prevention.php">
+                        <a href="{{ route('admin.preventions') }}">
                             <i class="ti-view-grid"></i><span>Prevention</span>
                         </a>
                     </li>

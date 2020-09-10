@@ -86,13 +86,31 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     });
 
     Route::get('/index','HomeController@index')->name('home');
+    //Slider
+        //CREATE
+    Route::get('/slider-add', 'HomeController@sliderAdd')->name('slider-add');
+    Route::post('/slider-add', 'HomeController@sliderAddOne');
+        //READ
     Route::get('/slider', 'HomeController@slider')->name('slider');
+        //UPDATE
     Route::get('/slider-edit/{id}', 'HomeController@sliderEdit')->name('slider-edit');
     Route::post('/slider-edit/{id}', 'HomeController@sliderEditOne');
     Route::post('/slider-edit-photo', 'HomeController@sliderPhotoUpdate');
+        //DELETE
     Route::get('/slider-delete/{id}', 'HomeController@sliderDelete')->name('slider-delete');
-    Route::get('/slider-add', 'HomeController@sliderAdd')->name('slider-add');
-    Route::post('/slider-add', 'HomeController@sliderAddOne');
+    
+    //Preventions
+        //CREATE
+    Route::get('/preventions-add', 'HomeController@preventionsAdd')->name('preventions-add');
+    Route::post('/preventions-add', 'HomeController@preventionsAddOne');
+        //READ
+    Route::get('/preventions', 'HomeController@preventions')->name('preventions');
+        //UPDATE    
+    Route::get('/preventions-edit/{id}', 'HomeController@preventionsEdit')->name('preventions-edit');
+    Route::post('/preventions-edit/{id}', 'HomeController@preventionsEditOne');
+    Route::post('/preventions-edit-photo', 'HomeController@preventionsPhotoUpdate');
+        //DELETE
+    Route::get('/preventions-delete/{id}', 'HomeController@preventionsDelete')->name('preventions-delete');
 
 
 
