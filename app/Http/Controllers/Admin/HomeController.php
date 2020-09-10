@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\TblSlider;
 use App\Models\TblPrevention;
+use App\Models\TblDoctor;
 
 class HomeController extends Controller
 {
@@ -129,6 +130,68 @@ class HomeController extends Controller
         return redirect('admin/preventions');
     }
 
-
     // <-- End Preventions -->
+
+        // <-- Start Doctors -->
+        public function doctors()
+        {
+            return view('admin.doctors', ['name' => 'Doctors', 'button' => 'Add Doctor', 'link' => 'admin.doctors-add' ,'doctors' => TblDoctor::getAll()]);
+        }
+        public function doctorsEdit($id)
+        {        
+            return view('admin.doctors-edit', ['name' => 'Doctors', 'button' => 'View Doctors', 'link' => 'admin.doctors','doctor' => tblDoctor::find($id)]);
+        }
+        public function doctorsEditOne(Request $request)
+        {
+            TblDoctor::updateOne($request);
+            return redirect('admin/doctors');
+        }
+        public function doctorsPhotoUpdate(Request $request)
+        {
+            $name = $request->photo->getClientOriginalName();
+            $path = $request->photo->move('uploads', $name);
+    
+            $doctor = TblDoctor::find($request->id);
+            $doctor->name = $request->name;
+            $doctor->slug = $request->slug;
+            $doctor->designation = $request->designation;
+            $doctor->degree = $request->degree;
+            $doctor->detail = $request->detail;
+            $doctor->practice_location = $request->practice_location;
+            $doctor->advice = $request->advice;
+            $doctor->facebook = $request->facebook;
+            $doctor->twitter = $request->twitter;
+            $doctor->linkedin = $request->linkedin;
+            $doctor->youtube = $request->youtube;
+            $doctor->instagram = $request->instagram;
+            $doctor->email = $request->email;
+            $doctor->phone = $request->phone;
+            $doctor->website = $request->website;
+            $doctor->address = $request->address;
+            $doctor->video_youtube = $request->video_youtube;
+            $doctor->doctor_order = $request->doctor_order;
+            $doctor->status = $request->status;
+            $doctor->meta_title = $request->meta_title;
+            $doctor->meta_description = $request->meta_description;
+            $doctor->photo = $name;
+            $doctor->save();
+    
+            return redirect('admin/doctors');
+        }
+        public function doctorsDelete($id)
+        {
+            TblDoctor::deleteDoctor($id);
+            return redirect('admin/doctors');
+        }
+        public function doctorsAdd()
+        {
+            return view('admin.doctors-add', ['name' => 'Add Doctor', 'button' => 'View doctors', 'link' => 'admin.doctors']);
+        }
+        public function doctorsAddOne(Request $request)
+        {
+            TblDoctor::addOne($request);
+            return redirect('admin/doctors');
+        }
+    
+        // <-- End Doctors -->
 }

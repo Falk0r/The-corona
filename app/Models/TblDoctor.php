@@ -77,6 +77,69 @@ class TblDoctor extends Model
 
 	public static function choose($request){
 		return TblDoctor::find($request->id);
- 	}
+	 }
+	
+	 public static function updateOne($request)
+	{
+		$doctor = TblDoctor::find($request->id);
+		$doctor->name = $request->name;
+		$doctor->slug = $request->slug;
+		$doctor->designation = $request->designation;
+		$doctor->degree = $request->degree;
+		$doctor->detail = $request->detail;
+		$doctor->practice_location = $request->practice_location;
+		$doctor->advice = $request->advice;
+		$doctor->facebook = $request->facebook;
+		$doctor->twitter = $request->twitter;
+		$doctor->linkedin = $request->linkedin;
+		$doctor->youtube = $request->youtube;
+		$doctor->instagram = $request->instagram;
+		$doctor->email = $request->email;
+		$doctor->phone = $request->phone;
+		$doctor->website = $request->website;
+		$doctor->address = $request->address;
+		$doctor->video_youtube = $request->video_youtube;
+		$doctor->doctor_order = $request->doctor_order;
+		$doctor->status = $request->status;
+		$doctor->meta_title = $request->meta_title;
+		$doctor->meta_description = $request->meta_description;
+		$doctor->save();
+		return;
+	}
+	public static function deleteDoctor($id)
+	{
+		return TblDoctor::destroy($id);
+	}
+	public static function addOne($request)
+	{
+		//Upload file
+		$name = $request->photo->getClientOriginalName();
+        $path = $request->photo->move('uploads', $name);
+
+		$doctor = new TblDoctor;
+		$doctor->name = $request->name;
+		$doctor->slug = $request->slug;
+		$doctor->designation = $request->designation;
+		$doctor->degree = $request->degree;
+		$doctor->detail = $request->detail;
+		$doctor->practice_location = $request->practice_location;
+		$doctor->advice = $request->advice;
+		$doctor->facebook = $request->facebook;
+		$doctor->twitter = $request->twitter;
+		$doctor->linkedin = $request->linkedin;
+		$doctor->youtube = $request->youtube;
+		$doctor->instagram = $request->instagram;
+		$doctor->email = $request->email;
+		$doctor->phone = $request->phone;
+		$doctor->website = $request->website;
+		$doctor->address = $request->address;
+		$doctor->video_youtube = $request->video_youtube;
+		$doctor->doctor_order = $request->doctor_order;
+		$doctor->status = $request->status;
+		$doctor->meta_title = $request->meta_title;
+		$doctor->meta_description = $request->meta_description;
+		$doctor->photo = $name;
+		$doctor->save();
+	}
 
 }
