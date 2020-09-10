@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Models\TblSlider;
 use App\Models\TblPrevention;
 use App\Models\TblDoctor;
+use App\Models\TblSettingLogo;
 
 class HomeController extends Controller
 {
@@ -194,4 +195,29 @@ class HomeController extends Controller
         }
     
         // <-- End Doctors -->
+
+        // <-- Start Web Settings -->
+
+            //Logo
+        public function settingLogo()
+        {
+            return view('admin.setting-logo', ['name' => 'Setting - Logo', 'logos' => TblSettingLogo::getAll()]);
+        }
+        public function settingLogoUpdate(Request $request)
+        {
+            
+            $name = $request->photo->getClientOriginalName();
+            $path = $request->photo->move('uploads', $name);
+
+            $logo = TblSettingLogo::find(1);
+            if ($request->name == 'logo') {
+                $logo->logo = $name;
+            } elseif ($request->name == 'logo_admin') {
+                $logo->logo_admin = $name;
+            }
+            $logo->save();
+            return redirect('admin/setting-logo');
+        }
+
+        // <-- End Web Settings -->
 }

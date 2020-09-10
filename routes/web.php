@@ -125,6 +125,11 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         //DELETE
     Route::get('/doctors-delete/{id}', 'HomeController@doctorsDelete')->name('doctors-delete');
 
+    //Website Settings
+        //Logo
+        Route::get('/setting-logo', 'HomeController@settingLogo')->name('setting-logo');
+        Route::post('/setting-logo', 'HomeController@settingLogoUpdate');
+
 
 
 });
