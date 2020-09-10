@@ -112,6 +112,19 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         //DELETE
     Route::get('/preventions-delete/{id}', 'HomeController@preventionsDelete')->name('preventions-delete');
 
+    //Doctors
+        //CREATE
+    Route::get('/doctors-add', 'HomeController@doctorsAdd')->name('doctors-add');
+    Route::post('/doctors-add', 'HomeController@doctorsAddOne');
+        //READ
+    Route::get('/doctors', 'HomeController@doctors')->name('doctors');
+        //UPDATE    
+    Route::get('/doctors-edit/{id}', 'HomeController@doctorsEdit')->name('doctors-edit');
+    Route::post('/doctors-edit/{id}', 'HomeController@doctorsEditOne');
+    Route::post('/doctors-edit-photo', 'HomeController@doctorsPhotoUpdate');
+        //DELETE
+    Route::get('/doctors-delete/{id}', 'HomeController@doctorsDelete')->name('doctors-delete');
+
 
 
 });

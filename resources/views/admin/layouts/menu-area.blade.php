@@ -196,7 +196,7 @@
                     </li>
 
                     <li class="">
-                        <a href="doctor.php">
+                        <a href="{{ route('admin.doctors') }}">
                             <i class="ti-user"></i><span>Doctor</span>
                         </a>
                     </li>
