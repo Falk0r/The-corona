@@ -133,4 +133,7 @@ class TblSettingHome extends Model
 		return TblPage::find(1);
 	}
 	
+	public static function getAll(){
+		return TblSettingHome::find(1);
+	}
 }

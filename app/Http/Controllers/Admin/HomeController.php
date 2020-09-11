@@ -13,6 +13,7 @@ use App\Models\TblDoctor;
 use App\Models\TblSettingLogo;
 use App\Models\TblSettingFavicon;
 use App\Models\TblSettingTopBar;
+use App\Models\TblSettingHome;
 
 class HomeController extends Controller
 {
@@ -251,6 +252,124 @@ class HomeController extends Controller
             $topBar->top_bar_phone = $request->top_bar_phone;
             $topBar->save();
             return redirect('admin/setting-top-bar');
+        }
+            //Home
+        public function settingHome()
+        {
+            return view('admin.setting-home', ['name' => 'Setting - Home Page', 'home' => TblSettingHome::getAll()]);
+        }
+        public function settingHomeUpdate(Request $request)
+        {
+            $home = TblSettingHome::find(1);
+            if ($request->form=='form_meta_information') {
+                $home->meta_title = $request->meta_title;
+                $home->meta_description = $request->meta_description;
+            }
+            if ($request->form=='form_header') {
+                $home->header_type = $request->header_type;
+                $home->header_type_image_heading = $request->header_type_image_heading;
+                $home->header_type_image_content = $request->header_type_image_content;
+                $home->header_type_image_btn_text = $request->header_type_image_btn_text;
+                $home->header_type_image_btn_url = $request->header_type_image_btn_url;
+                $home->header_type_video_heading = $request->header_type_video_heading;
+                $home->header_type_video_content = $request->header_type_video_content;
+                $home->header_type_video_btn_text = $request->header_type_video_btn_text;
+                $home->header_type_video_btn_url = $request->header_type_video_btn_url;
+                $home->header_type_video_yt_url = $request->header_type_video_yt_url;
+                if (isset($request->header_type_image_photo)) {         
+                    $name = $request->header_type_image_photo->getClientOriginalName();
+                    $path = $request->header_type_image_photo->move('uploads', $name);
+                    $home->header_type_image_photo = $name;
+                }
+            }
+            if ($request->form=='form_outbreak') {
+                $home->outbreak_title = $request->outbreak_title;
+                $home->outbreak_subtitle = $request->outbreak_subtitle;
+                $home->outbreak_status = $request->outbreak_status;
+            }
+            if ($request->form=='form_outbreak_icon1') {
+                $name = $request->outbreak_icon1->getClientOriginalName();
+                $path = $request->outbreak_icon1->move('uploads', $name);
+                $home->outbreak_icon1 = $name;
+            }
+            if ($request->form=='form_outbreak_icon2') {
+                $name = $request->outbreak_icon2->getClientOriginalName();
+                $path = $request->outbreak_icon2->move('uploads', $name);
+                $home->outbreak_icon2 = $name;
+            }
+            if ($request->form=='form_outbreak_icon3') {
+                $name = $request->outbreak_icon3->getClientOriginalName();
+                $path = $request->outbreak_icon3->move('uploads', $name);
+                $home->outbreak_icon3 = $name;
+            }
+            if ($request->form=='form_countrywise') {
+                $home->countrywise_title = $request->countrywise_title;
+                $home->countrywise_subtitle = $request->countrywise_subtitle;
+                $home->countrywise_status = $request->countrywise_status;
+            }
+            if ($request->form=='form_symptom') {
+                $home->symptom_title = $request->symptom_title;
+                $home->symptom_subtitle = $request->symptom_subtitle;
+                $home->symptom_status = $request->symptom_status;
+            }
+            if ($request->form=='form_special') {
+                $home->special_title = $request->special_title;
+                $home->special_subtitle = $request->special_subtitle;
+                $home->special_content = $request->special_content;
+                $home->special_btn_text = $request->special_btn_text;
+                $home->special_btn_url = $request->special_btn_url;
+                $home->special_yt_video = $request->special_yt_video;
+                $home->special_status = $request->special_status;
+                if (isset($request->special_bg)) {         
+                    $name = $request->special_bg->getClientOriginalName();
+                    $path = $request->special_bg->move('uploads', $name);
+                    $home->special_bg = $name;
+                }
+                if (isset($request->special_video_bg)) {         
+                    $name = $request->special_video_bg->getClientOriginalName();
+                    $path = $request->special_video_bg->move('uploads', $name);
+                    $home->special_video_bg = $name;
+                }
+            }
+            if ($request->form=='form_prevention') {
+                $home->prevention_title = $request->prevention_title;
+                $home->prevention_subtitle = $request->prevention_subtitle;
+                $home->prevention_status = $request->prevention_status;
+            }
+            if ($request->form=='form_doctor') {
+                $home->doctor_title = $request->doctor_title;
+                $home->doctor_subtitle = $request->doctor_subtitle;
+                $home->doctor_status = $request->doctor_status;
+            }
+            if ($request->form=='form_appointment') {
+                $home->appointment_title = $request->appointment_title;
+                $home->appointment_text = $request->appointment_text;
+                $home->appointment_btn_text = $request->appointment_btn_text;
+                $home->appointment_btn_url = $request->appointment_btn_url;
+                $home->appointment_status = $request->appointment_status;
+                if (isset($request->appointment_bg)) {         
+                    $name = $request->appointment_bg->getClientOriginalName();
+                    $path = $request->appointment_bg->move('uploads', $name);
+                    $home->appointment_bg = $name;
+                }
+            }
+            if ($request->form=='form_latest_news') {
+                $home->latest_news_title = $request->latest_news_title;
+                $home->latest_news_subtitle = $request->latest_news_subtitle;
+                $home->latest_news_status = $request->latest_news_status;
+            }
+            if ($request->form=='form_newsletter') {
+                $home->newsletter_title = $request->newsletter_title;
+                $home->newsletter_text = $request->newsletter_text;
+                $home->newsletter_status = $request->newsletter_status;
+                if (isset($request->newsletter_bg)) {         
+                    $name = $request->newsletter_bg->getClientOriginalName();
+                    $path = $request->newsletter_bg->move('uploads', $name);
+                    $home->newsletter_bg = $name;
+                }
+            }
+            $home->save();
+            return redirect('admin/setting-home');
         }
 
         // <-- End Web Settings -->

@@ -138,6 +138,9 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         Route::get('/setting-top-bar', 'HomeController@settingTopBar')->name('setting-top-bar');
         Route::post('/setting-top-bar', 'HomeController@settingTopBarUpdate');
 
+        //Home
+        Route::get('/setting-home', 'HomeController@settingHome')->name('setting-home');
+        Route::post('/setting-home', 'HomeController@settingHomeUpdate');
 
 
 

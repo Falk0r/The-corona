@@ -31,7 +31,7 @@
                             </li>
 
                             <li class="">
-                                <a href="setting-home.php">Home Page</a>
+                                <a href="{{ route('admin.setting-home') }}">Home Page</a>
                             </li>
 
                             <li class="">
