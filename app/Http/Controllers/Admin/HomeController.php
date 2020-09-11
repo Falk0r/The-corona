@@ -11,6 +11,7 @@ use App\Models\TblSlider;
 use App\Models\TblPrevention;
 use App\Models\TblDoctor;
 use App\Models\TblSettingLogo;
+use App\Models\TblSettingFavicon;
 
 class HomeController extends Controller
 {
@@ -218,6 +219,23 @@ class HomeController extends Controller
             $logo->save();
             return redirect('admin/setting-logo');
         }
+
+            //Favicon
+            public function settingFavicon()
+            {
+                return view('admin.setting-favicon', ['name' => 'Setting - Favicon', 'favicon' => TblSettingFavicon::getAll()]);
+            }
+            public function settingFaviconUpdate(Request $request)
+            {
+                
+                $name = $request->photo->getClientOriginalName();
+                $path = $request->photo->move('uploads', $name);
+    
+                $favicon = TblSettingFavicon::find(1);
+                $favicon->favicon = $name;
+                $favicon->save();
+                return redirect('admin/setting-favicon');
+            }
 
         // <-- End Web Settings -->
 }
