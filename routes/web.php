@@ -130,6 +130,11 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         Route::get('/setting-logo', 'HomeController@settingLogo')->name('setting-logo');
         Route::post('/setting-logo', 'HomeController@settingLogoUpdate');
 
+        //Favicon
+        Route::get('/setting-favicon', 'HomeController@settingFavicon')->name('setting-favicon');
+        Route::post('/setting-favicon', 'HomeController@settingFaviconUpdate');
+
+
 
 
 });

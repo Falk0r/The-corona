@@ -23,7 +23,7 @@
                             </li>
 
                             <li class="">
-                                <a href="setting-favicon.php">Favicon</a>
+                                <a href="{{ route('admin.setting-favicon') }}">Favicon</a>
                             </li>
 
                             <li class="">

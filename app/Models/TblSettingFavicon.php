@@ -24,4 +24,8 @@ class TblSettingFavicon extends Model
 	protected $fillable = [
 		'favicon'
 	];
+
+	public static function getAll(){
+		return TblSettingFavicon::find(1);
+	}
 }
