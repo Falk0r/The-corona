@@ -12,6 +12,7 @@ use App\Models\TblPrevention;
 use App\Models\TblDoctor;
 use App\Models\TblSettingLogo;
 use App\Models\TblSettingFavicon;
+use App\Models\TblSettingTopBar;
 
 class HomeController extends Controller
 {
@@ -221,21 +222,36 @@ class HomeController extends Controller
         }
 
             //Favicon
-            public function settingFavicon()
-            {
-                return view('admin.setting-favicon', ['name' => 'Setting - Favicon', 'favicon' => TblSettingFavicon::getAll()]);
-            }
-            public function settingFaviconUpdate(Request $request)
-            {
-                
-                $name = $request->photo->getClientOriginalName();
-                $path = $request->photo->move('uploads', $name);
-    
-                $favicon = TblSettingFavicon::find(1);
-                $favicon->favicon = $name;
-                $favicon->save();
-                return redirect('admin/setting-favicon');
-            }
+        public function settingFavicon()
+        {
+            return view('admin.setting-favicon', ['name' => 'Setting - Favicon', 'favicon' => TblSettingFavicon::getAll()]);
+        }
+        public function settingFaviconUpdate(Request $request)
+        {
+            
+            $name = $request->photo->getClientOriginalName();
+            $path = $request->photo->move('uploads', $name);
+
+            $favicon = TblSettingFavicon::find(1);
+            $favicon->favicon = $name;
+            $favicon->save();
+            return redirect('admin/setting-favicon');
+        }
+
+            //Top-Bar
+        public function settingTopBar()
+        {
+            return view('admin.setting-top-bar', ['name' => 'Setting - Top Bar', 'topBar' => TblSettingTopBar::getAll()]);
+        }
+        public function settingTopBarUpdate(Request $request)
+        {
+
+            $topBar = TblSettingTopBar::find(1);
+            $topBar->top_bar_email = $request->top_bar_email;
+            $topBar->top_bar_phone = $request->top_bar_phone;
+            $topBar->save();
+            return redirect('admin/setting-top-bar');
+        }
 
         // <-- End Web Settings -->
 }

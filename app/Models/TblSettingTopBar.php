@@ -26,4 +26,8 @@ class TblSettingTopBar extends Model
 		'top_bar_email',
 		'top_bar_phone'
 	];
+
+	public static function getAll(){
+		return TblSettingTopBar::find(1);
+	}
 }

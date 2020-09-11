@@ -134,6 +134,10 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         Route::get('/setting-favicon', 'HomeController@settingFavicon')->name('setting-favicon');
         Route::post('/setting-favicon', 'HomeController@settingFaviconUpdate');
 
+        //Top-Bar
+        Route::get('/setting-top-bar', 'HomeController@settingTopBar')->name('setting-top-bar');
+        Route::post('/setting-top-bar', 'HomeController@settingTopBarUpdate');
+
 
 
 

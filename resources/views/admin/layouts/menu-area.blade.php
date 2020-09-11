@@ -27,7 +27,7 @@
                             </li>
 
                             <li class="">
-                                <a href="setting-top-bar.php">Top Bar</a>
+                                <a href="{{ route('admin.setting-top-bar') }}">Top Bar</a>
                             </li>
 
                             <li class="">
